@@ -1,0 +1,163 @@
+[
+  {
+    "name": "John Doe",
+    "profilePicture": "https://source.unsplash.com/-Tc8w2Kvsf8",
+    "contactDetails": {
+      "email": "john.doe@email.com",
+      "phone": "+1 (555) 123-4567",
+      "location": "Dhaka, Bangladesh"
+    },
+    "education": "Bachelor's Degree in Tourism Management",
+    "skills": [
+      "Multilingual",
+      "Cultural Knowledge",
+      "Navigation",
+      "Customer Service"
+    ],
+    "workExperience": [
+      {
+        "position": "Senior Tour Guide",
+        "company": "Explore Adventures",
+        "duration": "2018 - Present"
+      },
+      {
+        "position": "Tour Coordinator",
+        "company": "Discover Travel Agency",
+        "duration": "2015 - 2018"
+      }
+    ],
+    "rating": 4.8
+  },
+  {
+    "name": "Jane Smith",
+    "profilePicture": "https://source.unsplash.com/i1U5s5GkKxY",
+    "contactDetails": {
+      "email": "jane.smith@email.com",
+      "phone": "+1 (555) 987-6543",
+      "location": "Chittagong, Bangladesh"
+    },
+    "education": "Master's Degree in Tourism and Hospitality",
+    "skills": [
+      "Interpersonal Communication",
+      "Destination Expertise",
+      "Problem Solving"
+    ],
+    "workExperience": [
+      {
+        "position": "Tour Specialist",
+        "company": "Global Explorers",
+        "duration": "2017 - Present"
+      },
+      {
+        "position": "Travel Consultant",
+        "company": "Wanderlust Travels",
+        "duration": "2014 - 2017"
+      }
+    ],
+    "rating": 4.5
+  },
+  {
+    "name": "Alex Johnson",
+    "profilePicture": "https://source.unsplash.com/MSepzbKFz10",
+    "contactDetails": {
+      "email": "alex.johnson@email.com",
+      "phone": "+1 (555) 555-5555",
+      "location": "Sylhet, Bangladesh"
+    },
+    "education": "Diploma in Tourism and Guiding",
+    "skills": ["Outdoor Survival", "Historical Knowledge", "Team Leadership"],
+    "workExperience": [
+      {
+        "position": "Lead Guide",
+        "company": "Adventurous Trails",
+        "duration": "2016 - Present"
+      },
+      {
+        "position": "Tour Instructor",
+        "company": "Nature Expeditions",
+        "duration": "2013 - 2016"
+      }
+    ],
+    "rating": 4.2
+  },
+  {
+    "name": "Emily Davis",
+    "profilePicture": "https://source.unsplash.com/JgXxNIHotZ8",
+    "contactDetails": {
+      "email": "emily.davis@email.com",
+      "phone": "+1 (555) 111-2233",
+      "location": "Rajshahi, Bangladesh"
+    },
+    "education": "Certification in Cultural Heritage Tourism",
+    "skills": [
+      "Local Cuisine Expertise",
+      "Group Management",
+      "Language Proficiency"
+    ],
+    "workExperience": [
+      {
+        "position": "Cultural Guide",
+        "company": "Heritage Explorations",
+        "duration": "2015 - Present"
+      },
+      {
+        "position": "Tour Coordinator",
+        "company": "Cultural Connections",
+        "duration": "2012 - 2015"
+      }
+    ],
+    "rating": 4.7
+  },
+  {
+    "name": "Md Khan",
+    "profilePicture": "https://source.unsplash.com/ocOW8-uiAjk",
+    "contactDetails": {
+      "email": "md.khan@email.com",
+      "phone": "+1 (555) 333-7890",
+      "location": "Dinajpur, Bangladesh"
+    },
+    "education": "Bachelor's Degree in Tourism and Hospitality",
+    "skills": [
+      "Cultural Interpretation",
+      "Adventure Planning",
+      "Communication"
+    ],
+    "workExperience": [
+      {
+        "position": "Senior Tour Guide",
+        "company": "Discover Bangladesh Tours",
+        "duration": "2019 - Present"
+      },
+      {
+        "position": "Tour Planner",
+        "company": "Explore Bangladesh",
+        "duration": "2016 - 2019"
+      }
+    ],
+    "rating": 4.9
+  },
+  {
+    "name": "Sara Ahmed",
+    "profilePicture": "https://source.unsplash.com/hhChqzLkbTE",
+    "contactDetails": {
+      "email": "sara.ahmed@email.com",
+      "phone": "+1 (555) 678-1234",
+      "location": "Barisal, Bangladesh"
+    },
+    "education": "Master's Degree in Cultural Heritage Management",
+    "skills": ["Cultural Preservation", "Community Engagement", "Tour Design"],
+    "workExperience": [
+      {
+        "position": "Cultural Heritage Guide",
+        "company": "Heritage Tours BD",
+        "duration": "2017 - Present"
+      },
+      {
+        "position": "Research Assistant",
+        "company": "National Museum of Bangladesh",
+        "duration": "2014 - 2017"
+      }
+    ],
+    "rating": 4.6
+  }
+]

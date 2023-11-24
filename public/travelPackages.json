@@ -1,0 +1,20 @@
+[
+  {
+    "imageUrl": "https://source.unsplash.com/MrKPi-yajC0/640x360",
+    "tourType": "Adventure",
+    "tripTitle": "Majestic Mountains Exploration",
+    "price": 150
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/Cdwi5n7Gwes/640x360",
+    "tourType": "Cultural",
+    "tripTitle": "Historical Marvels Tour",
+    "price": 120
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/anE4tvkHhLs/640x360",
+    "tourType": "Nature",
+    "tripTitle": "Tranquil Rivers Adventure",
+    "price": 180
+  }
+]

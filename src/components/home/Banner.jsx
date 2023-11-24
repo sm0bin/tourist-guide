@@ -8,7 +8,23 @@ import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 // const images = [slide1, slide2, slide3, slide4, slide5, slide6];
-const images = ["https://source.unsplash.com/AMqrW1Sxx3g/2400x1080", "https://source.unsplash.com/anE4tvkHhLs/2400x1080", "https://source.unsplash.com/9V5dyukvQ20/2400x1080", "https://source.unsplash.com/oRsxtzxVmsY/2400x1080", "https://source.unsplash.com/MrKPi-yajC0/2400x1080", "https://source.unsplash.com/mO1_udD5iCs/2400x1080", "https://source.unsplash.com/DWoOJ2C2uns/2400x1080", "https://source.unsplash.com/_jxz7Fe1btc/2400x1080", "https://source.unsplash.com/k7EDYStENI0/2400x1080", "https://source.unsplash.com/WICc--aTNt8/2400x1080", "https://source.unsplash.com/Cdwi5n7Gwes/2400x1080", "https://source.unsplash.com/RfHhohVQLnQ/2400x1080", "https://source.unsplash.com/Ph5VL5Tilto/2400x1080", "https://source.unsplash.com/-rNBQWV5Uis/2400x1080"];
+const images = [
+    "https://source.unsplash.com/Cdwi5n7Gwes/2400x1080",
+    "https://source.unsplash.com/daSgrMUzDyc/2400x1080",
+    "https://source.unsplash.com/anE4tvkHhLs/2400x1080",
+    "https://source.unsplash.com/9V5dyukvQ20/2400x1080",
+    "https://source.unsplash.com/oRsxtzxVmsY/2400x1080",
+    "https://source.unsplash.com/MrKPi-yajC0/2400x1080",
+    "https://source.unsplash.com/mO1_udD5iCs/2400x1080",
+    "https://source.unsplash.com/DWoOJ2C2uns/2400x1080",
+    "https://source.unsplash.com/_jxz7Fe1btc/2400x1080",
+    "https://source.unsplash.com/k7EDYStENI0/2400x1080",
+    "https://source.unsplash.com/WICc--aTNt8/2400x1080",
+    "https://source.unsplash.com/RfHhohVQLnQ/2400x1080",
+    "https://source.unsplash.com/Ph5VL5Tilto/2400x1080",
+    "https://source.unsplash.com/AMqrW1Sxx3g/2400x1080",
+    "https://source.unsplash.com/-rNBQWV5Uis/2400x1080"
+];
 console.log(images.length);
 
 
