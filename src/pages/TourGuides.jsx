@@ -4,7 +4,7 @@ import SectionTitle from "../components/utilities/SectionTitle";
 
 const TourGuides = () => {
 
-    const tourGuides = useLoadData('/tourGuides.json', "tourGuides");
+    const tourGuides = useLoadData('http://localhost:5500/guides', "tourGuides");
     return (
         <div className="mx-4 md:mx-8 lg:mx-auto max-w-7xl my-32">
             <SectionTitle title='Our Tour Guides'></SectionTitle>

@@ -7,8 +7,8 @@ import useLoadData from '../../hooks/useLoadData';
 
 const Overview = () => {
 
-    const tourGuides = useLoadData('/tourGuides.json', "tourGuides");
-    const tourPackages = useLoadData('/tourPackages.json', "tourPackages");
+    const tourGuides = useLoadData('http://localhost:5500/guides', "tourGuides");
+    const tourPackages = useLoadData('http://localhost:5500/tours', "tourPackages");
 
     return (
         <div className='my-32'>

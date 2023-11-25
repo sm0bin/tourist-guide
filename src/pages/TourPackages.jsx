@@ -3,7 +3,7 @@ import useLoadData from "../hooks/useLoadData";
 import SectionTitle from "../components/utilities/SectionTitle";
 
 const TourPackages = () => {
-    const tourPackages = useLoadData('/tourPackages.json', "tourPackages");
+    const tourPackages = useLoadData('http://localhost:5500/tours', "tourPackages");
 
     const getBadgeColor = (tourType) => {
         let badgeColor = '';
