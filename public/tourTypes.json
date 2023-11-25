@@ -1,0 +1,42 @@
+[
+  {
+    "tourType": "Adventure",
+    "icon": "🌄"
+  },
+  {
+    "tourType": "Cultural",
+    "icon": "🏛️"
+  },
+  {
+    "tourType": "Nature",
+    "icon": "🌿"
+  },
+  {
+    "tourType": "Historical",
+    "icon": "🏰"
+  },
+  {
+    "tourType": "City",
+    "icon": "🌆"
+  },
+  {
+    "tourType": "Beach",
+    "icon": "🏖️"
+  },
+  {
+    "tourType": "Wildlife",
+    "icon": "🦓"
+  },
+  {
+    "tourType": "Foods",
+    "icon": "🍲"
+  },
+  {
+    "tourType": "Relaxation",
+    "icon": "🏝️"
+  },
+  {
+    "tourType": "Photography",
+    "icon": "📸"
+  }
+]

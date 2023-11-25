@@ -31,3 +31,14 @@
   flex-grow: 1;
   margin-right: 0;
 }
+
+/* swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal */
+
+
+.swiper {
+  padding-bottom: 2rem;
+}
+
+.swiper-pagination-bullets {
+  bottom: 0;
+}
