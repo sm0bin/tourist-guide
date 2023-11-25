@@ -13,7 +13,7 @@ const Header = () => {
     //     { label: 'OUR SHOP', path: '/shop' },
     //     { label: 'SIGN OUT', path: '/signout' },
     // ];
-    const { user, signOut } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
     // const { displayName, email, photoURL } = user || null;
 
@@ -33,7 +33,7 @@ const Header = () => {
     </>
 
     const handleSignOut = () => {
-        signOut()
+        logOut()
             .then(() => {
                 toast.success("User logged out successfully");
             }).catch((error) => {
@@ -98,7 +98,7 @@ const Header = () => {
                         </div>
                     </div>
                     // <button onClick={handleSignOut} className="btn btn-warning">Sign Out</button> 
-                    : <NavLink to="/auth" className="btn btn-info">Login</NavLink>
+                    : <NavLink to="/auth/login" className="btn btn-info">Login</NavLink>
 
 
 

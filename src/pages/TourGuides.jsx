@@ -1,12 +1,16 @@
 import { FaArrowRight, FaStar } from "react-icons/fa";
 import useLoadData from "../hooks/useLoadData";
 import SectionTitle from "../components/utilities/SectionTitle";
+import { Helmet } from "react-helmet-async";
 
 const TourGuides = () => {
 
     const tourGuides = useLoadData('http://localhost:5500/guides', "tourGuides");
     return (
         <div className="mx-4 md:mx-8 lg:mx-auto max-w-7xl my-32">
+            <Helmet>
+                <title>Tourist Guide | Tour Guides</title>
+            </Helmet>
             <SectionTitle title='Our Tour Guides'></SectionTitle>
 
 

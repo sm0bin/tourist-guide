@@ -1,6 +1,7 @@
 import { FaRegHeart } from "react-icons/fa";
 import useLoadData from "../hooks/useLoadData";
 import SectionTitle from "../components/utilities/SectionTitle";
+import { Helmet } from "react-helmet-async";
 
 const TourPackages = () => {
     const tourPackages = useLoadData('http://localhost:5500/tours', "tourPackages");
@@ -36,6 +37,10 @@ const TourPackages = () => {
 
     return (
         <div className="mx-4 md:mx-8 lg:mx-auto max-w-7xl my-32">
+            <Helmet>
+                <title>Tourist Guide | Tour Packages</title>
+            </Helmet>
+
             <SectionTitle title='Our Packages'></SectionTitle>
 
 
