@@ -1,7 +1,7 @@
 [
   {
     "name": "John Doe",
-    "profilePicture": "https://source.unsplash.com/-Tc8w2Kvsf8",
+    "profilePicture": "https://source.unsplash.com/-Tc8w2Kvsf8/512x512",
     "contactDetails": {
       "email": "john.doe@email.com",
       "phone": "+1 (555) 123-4567",
@@ -30,7 +30,7 @@
   },
   {
     "name": "Jane Smith",
-    "profilePicture": "https://source.unsplash.com/i1U5s5GkKxY",
+    "profilePicture": "https://source.unsplash.com/i1U5s5GkKxY/512x512",
     "contactDetails": {
       "email": "jane.smith@email.com",
       "phone": "+1 (555) 987-6543",
@@ -58,7 +58,7 @@
   },
   {
     "name": "Alex Johnson",
-    "profilePicture": "https://source.unsplash.com/MSepzbKFz10",
+    "profilePicture": "https://source.unsplash.com/MSepzbKFz10/512x512",
     "contactDetails": {
       "email": "alex.johnson@email.com",
       "phone": "+1 (555) 555-5555",
@@ -82,7 +82,7 @@
   },
   {
     "name": "Emily Davis",
-    "profilePicture": "https://source.unsplash.com/JgXxNIHotZ8",
+    "profilePicture": "https://source.unsplash.com/JgXxNIHotZ8/512x512",
     "contactDetails": {
       "email": "emily.davis@email.com",
       "phone": "+1 (555) 111-2233",
@@ -110,7 +110,7 @@
   },
   {
     "name": "Md Khan",
-    "profilePicture": "https://source.unsplash.com/ocOW8-uiAjk",
+    "profilePicture": "https://source.unsplash.com/ocOW8-uiAjk/512x512",
     "contactDetails": {
       "email": "md.khan@email.com",
       "phone": "+1 (555) 333-7890",
@@ -138,7 +138,7 @@
   },
   {
     "name": "Sara Ahmed",
-    "profilePicture": "https://source.unsplash.com/hhChqzLkbTE",
+    "profilePicture": "https://source.unsplash.com/hhChqzLkbTE/512x512",
     "contactDetails": {
       "email": "sara.ahmed@email.com",
       "phone": "+1 (555) 678-1234",

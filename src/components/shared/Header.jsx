@@ -23,6 +23,8 @@ const Header = () => {
         <li><NavLink to="/blogs">Blogs</NavLink></li>
         <li><NavLink to="/about">About Us</NavLink></li>
         <li><NavLink to="/contact">Contact Us</NavLink></li>
+        <li><NavLink to="/tours">Tour Packages</NavLink></li>
+        <li><NavLink to="/guides">Tour Guides</NavLink></li>
         {/* {
             user ?
                 <li><NavLink to="/signout">Sign Out</NavLink></li> :
