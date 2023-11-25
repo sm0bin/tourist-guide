@@ -1,0 +1,110 @@
+[
+  {
+    "imageUrl": "https://source.unsplash.com/MrKPi-yajC0/640x360",
+    "tourType": "Adventure",
+    "tripTitle": "Majestic Mountains Exploration",
+    "price": 150,
+    "tourDetails": {
+      "duration": "5 days",
+      "accommodation": "Mountain lodges",
+      "activities": ["Hiking", "Rock Climbing", "Campfire Nights"]
+    },
+    "description": "Embark on an exhilarating 5-day journey through the breathtaking landscapes of majestic mountains. Stay in cozy mountain lodges, engage in thrilling activities like hiking and rock climbing, and unwind under the starry sky during campfire nights."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/Cdwi5n7Gwes/640x360",
+    "tourType": "Cultural",
+    "tripTitle": "Historical Marvels Tour",
+    "price": 120,
+    "tourDetails": {
+      "duration": "4 days",
+      "accommodation": "Local Inns",
+      "activities": ["Guided Tours", "Museum Visits", "Cultural Workshops"]
+    },
+    "description": "Immerse yourself in the rich tapestry of history with a 4-day Cultural Marvels Tour. Explore ancient wonders with guided tours, visit museums showcasing cultural treasures, and participate in engaging cultural workshops. Experience the past come to life!"
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/anE4tvkHhLs/640x360",
+    "tourType": "Nature",
+    "tripTitle": "Tranquil Rivers Adventure",
+    "price": 180,
+    "tourDetails": {
+      "duration": "6 days",
+      "accommodation": "Riverside Cabins",
+      "activities": ["River Rafting", "Nature Walks", "Bird Watching"]
+    },
+    "description": "Indulge in a 6-day Tranquil Rivers Adventure, surrounded by the serenity of nature. Stay in riverside cabins, experience the thrill of river rafting, take leisurely nature walks, and enjoy bird watching in the picturesque landscapes."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/MrKPi-yajC0/640x360",
+    "tourType": "Adventure",
+    "tripTitle": "Majestic Mountains Exploration II",
+    "price": 150,
+    "tourDetails": {
+      "duration": "6 days",
+      "accommodation": "Mountain lodges",
+      "activities": ["Hiking", "Rock Climbing", "Campfire Nights"]
+    },
+    "description": "Experience the grandeur of the mountains with a 6-day Majestic Mountains Exploration II. Traverse through stunning landscapes, stay in comfortable mountain lodges, and engage in exciting activities like hiking, rock climbing, and memorable campfire nights."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/Cdwi5n7Gwes/640x360",
+    "tourType": "Cultural",
+    "tripTitle": "Historical Marvels Tour II",
+    "price": 120,
+    "tourDetails": {
+      "duration": "3 days",
+      "accommodation": "Local Inns",
+      "activities": ["Guided Tours", "Museum Visits", "Cultural Workshops"]
+    },
+    "description": "Delve into history on a 3-day Historical Marvels Tour II. Stay in charming local inns, explore historical sites with knowledgeable guides, visit museums filled with cultural treasures, and engage in enlightening cultural workshops."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/anE4tvkHhLs/640x360",
+    "tourType": "Nature",
+    "tripTitle": "Tranquil Rivers Adventure II",
+    "price": 180,
+    "tourDetails": {
+      "duration": "5 days",
+      "accommodation": "Riverside Cabins",
+      "activities": ["River Rafting", "Nature Walks", "Bird Watching"]
+    },
+    "description": "Escape to nature with a 5-day Tranquil Rivers Adventure II. Find peace in riverside cabins, enjoy the thrill of river rafting, take leisurely nature walks, and indulge in the beauty of bird watching amidst natural surroundings."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/MrKPi-yajC0/640x360",
+    "tourType": "Adventure",
+    "tripTitle": "Majestic Mountains Exploration III",
+    "price": 150,
+    "tourDetails": {
+      "duration": "4 days",
+      "accommodation": "Mountain lodges",
+      "activities": ["Hiking", "Rock Climbing", "Campfire Nights"]
+    },
+    "description": "Discover the allure of mountains on a 4-day Majestic Mountains Exploration III. Stay in comfortable mountain lodges, partake in thrilling activities such as hiking and rock climbing, and experience the magic of campfire nights under the stars."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/Cdwi5n7Gwes/640x360",
+    "tourType": "Cultural",
+    "tripTitle": "Historical Marvels Tour III",
+    "price": 120,
+    "tourDetails": {
+      "duration": "7 days",
+      "accommodation": "Local Inns",
+      "activities": ["Guided Tours", "Museum Visits", "Cultural Workshops"]
+    },
+    "description": "Immerse yourself in history with a 7-day Historical Marvels Tour III. Stay in local inns, explore historical wonders with guided tours, visit enriching museums, and engage in cultural workshops to deepen your understanding of the past."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/anE4tvkHhLs/640x360",
+    "tourType": "Nature",
+    "tripTitle": "Tranquil Rivers Adventure III",
+    "price": 180,
+    "tourDetails": {
+      "duration": "3 days",
+      "accommodation": "Riverside Cabins",
+      "activities": ["River Rafting", "Nature Walks", "Bird Watching"]
+    },
+    "description": "Embark on a 3-day Tranquil Rivers Adventure III, surrounded by nature's beauty. Stay in comfortable riverside cabins, experience the excitement of river rafting, take leisurely nature walks, and enjoy the serenity of bird watching."
+  }
+]

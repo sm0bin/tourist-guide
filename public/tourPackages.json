@@ -1,0 +1,179 @@
+[
+  {
+    "imageUrl": "https://source.unsplash.com/MrKPi-yajC0/640x360",
+    "tourType": "Adventure",
+    "icon": "🌄",
+    "tripTitle": "Mountain Expedition",
+    "price": 150,
+    "tourDetails": {
+      "duration": "7 days",
+      "accommodation": "Alpine Chalets",
+      "activities": ["Mountain Climbing", "Zip-lining", "Bonfire Nights"]
+    },
+    "description": "Embark on a thrilling 7-day Mountain Expedition, surrounded by breathtaking landscapes. Stay in cozy alpine chalets, challenge yourself with mountain climbing and zip-lining, and unwind under the stars during bonfire nights."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/Cdwi5n7Gwes/640x360",
+    "tourType": "Cultural",
+    "icon": "🏛️",
+    "tripTitle": "Historical Heritage Tour",
+    "price": 120,
+    "tourDetails": {
+      "duration": "5 days",
+      "accommodation": "Heritage Hotels",
+      "activities": ["Guided Tours", "Museum Visits", "Cultural Performances"]
+    },
+    "description": "Immerse yourself in the rich cultural tapestry with a 5-day Historical Heritage Tour. Stay in elegant heritage hotels, explore historical sites with knowledgeable guides, visit museums, and witness captivating cultural performances."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/anE4tvkHhLs/640x360",
+    "tourType": "Nature",
+    "icon": "🌿",
+    "tripTitle": "Enchanted Forest Retreat",
+    "price": 180,
+    "tourDetails": {
+      "duration": "6 days",
+      "accommodation": "Forest Cabins",
+      "activities": ["Nature Walks", "Bird Watching", "Treehouse Stay"]
+    },
+    "description": "Reconnect with nature on a 6-day Enchanted Forest Retreat. Stay in charming forest cabins, take leisurely nature walks, indulge in bird watching, and experience a unique overnight stay in a treehouse."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/DWoOJ2C2uns/640x360",
+    "tourType": "Historical",
+    "icon": "🏰",
+    "tripTitle": "Ancient Castle Exploration",
+    "price": 200,
+    "tourDetails": {
+      "duration": "8 days",
+      "accommodation": "Castle Suites",
+      "activities": ["Castle Tours", "Medieval Banquets", "Archery"]
+    },
+    "description": "Step back in time with an 8-day Ancient Castle Exploration. Stay in luxurious castle suites, explore ancient castles with guided tours, savor medieval banquets, and try your hand at archery in the castle grounds."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/mO1_udD5iCs/640x360",
+    "tourType": "City",
+    "icon": "🌆",
+    "tripTitle": "Metropolitan Adventure",
+    "price": 130,
+    "tourDetails": {
+      "duration": "4 days",
+      "accommodation": "City Hotels",
+      "activities": ["City Tours", "Shopping Spree", "Nightlife Excursion"]
+    },
+    "description": "Experience the vibrant energy of the city with a 4-day Metropolitan Adventure. Stay in central city hotels, explore urban landscapes with city tours, indulge in a shopping spree, and enjoy the exciting nightlife."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/Ph5VL5Tilto/640x360",
+    "tourType": "Beach",
+    "icon": "🏖️",
+    "tripTitle": "Tropical Paradise Getaway",
+    "price": 170,
+    "tourDetails": {
+      "duration": "7 days",
+      "accommodation": "Beachfront Resorts",
+      "activities": ["Snorkeling", "Sunset Cruises", "Beach Yoga"]
+    },
+    "description": "Escape to a tropical paradise with a 7-day Beach Getaway. Stay in luxurious beachfront resorts, indulge in snorkeling adventures, enjoy scenic sunset cruises, and find serenity with beachfront yoga sessions."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/v6A4nXxqkFo/640x360",
+    "tourType": "Wildlife",
+    "icon": "🦓",
+    "tripTitle": "Safari Expedition",
+    "price": 190,
+    "tourDetails": {
+      "duration": "5 days",
+      "accommodation": "Safari Lodges",
+      "activities": ["Game Drives", "Bush Walks", "Wildlife Photography"]
+    },
+    "description": "Embark on a thrilling 5-day Safari Expedition. Stay in comfortable safari lodges, explore the wilderness with game drives and bush walks, and capture stunning wildlife moments with dedicated wildlife photography sessions."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/dZKiXR9FYcM/640x360",
+    "tourType": "Foods",
+    "icon": "🍲",
+    "tripTitle": "Culinary Delights Tour",
+    "price": 110,
+    "tourDetails": {
+      "duration": "3 days",
+      "accommodation": "Foodie's Inn",
+      "activities": ["Gourmet Tasting", "Cooking Classes", "Local Food Markets"]
+    },
+    "description": "Satisfy your taste buds with a 3-day Culinary Delights Tour. Stay in a foodie's inn, indulge in gourmet tastings, enhance your culinary skills with cooking classes, and explore local food markets for authentic flavors."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/r_MqlohIVO8/640x360",
+    "tourType": "Relaxation",
+    "icon": "🏝️",
+    "tripTitle": "Island Retreat",
+    "price": 160,
+    "tourDetails": {
+      "duration": "6 days",
+      "accommodation": "Island Resorts",
+      "activities": ["Spa Relaxation", "Sunbathing", "Island Excursions"]
+    },
+    "description": "Unwind in paradise with a 6-day Island Retreat. Stay in luxurious island resorts, pamper yourself with spa relaxation, soak up the sun while sunbathing, and explore the beauty of the surrounding islands with guided excursions."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/JBszu2VpC8k/640x360",
+    "tourType": "Photography",
+    "icon": "📸",
+    "tripTitle": "Pictorial Landscapes Expedition",
+    "price": 140,
+    "tourDetails": {
+      "duration": "4 days",
+      "accommodation": "Scenic Villas",
+      "activities": ["Photography Workshops", "Sunrise Shoots", "Nature Walks"]
+    },
+    "description": "Capture the beauty of picturesque landscapes on a 4-day Photography Expedition. Stay in scenic villas, enhance your photography skills with workshops, capture stunning sunrise shots, and take leisurely nature walks for inspiration."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/_vL6mbbHZkI/640x360",
+    "tourType": "Adventure",
+    "icon": "🌄",
+    "tripTitle": "Mountain Trekking",
+    "price": 155,
+    "tourDetails": {
+      "duration": "6 days",
+      "accommodation": "Mountain Cabins",
+      "activities": ["Trekking", "Caving", "Stargazing"]
+    },
+    "description": "Embark on an adventurous 6-day Mountain Trekking journey, exploring rugged terrains and staying in cozy mountain cabins. Engage in thrilling activities like trekking, caving, and enjoy mesmerizing stargazing nights."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/N_au3KCcQng/640x360",
+    "tourType": "Cultural",
+    "icon": "🏛️",
+    "tripTitle": "Cultural Immersion Experience",
+    "price": 125,
+    "tourDetails": {
+      "duration": "4 days",
+      "accommodation": "Cultural Homestays",
+      "activities": [
+        "Local Cultural Festivals",
+        "Traditional Crafts",
+        "Cooking Demonstrations"
+      ]
+    },
+    "description": "Immerse yourself in local traditions with a 4-day Cultural Immersion Experience. Stay in cultural homestays, participate in vibrant local cultural festivals, learn traditional crafts, and enjoy cooking demonstrations."
+  },
+  {
+    "imageUrl": "https://source.unsplash.com/9W_yveWm5w4/640x360",
+    "tourType": "Nature",
+    "icon": "🌿",
+    "tripTitle": "Botanical Garden Retreat",
+    "price": 185,
+    "tourDetails": {
+      "duration": "5 days",
+      "accommodation": "Botanical Retreat Center",
+      "activities": [
+        "Botanical Garden Tours",
+        "Meditation Sessions",
+        "Nature Sketching"
+      ]
+    },
+    "description": "Reconnect with nature's wonders on a 5-day Botanical Garden Retreat. Stay at a botanical retreat center, explore enchanting botanical gardens, indulge in meditation sessions, and express your creativity with nature sketching."
+  }
+]

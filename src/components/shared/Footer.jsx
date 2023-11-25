@@ -11,7 +11,7 @@ const Footer = () => {
                     <aside>
                         <img src="/travel-logo.svg" className="w-24 h-24" alt="brand logo" />
                         <h2 className=" text-4xl font-bold dark:text-white text-blue-400">Tourist <span className="text-yellow-500">Guide</span></h2>
-                        <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
+                        <p>Trusted Service Since 1999</p>
                     </aside>
                     <nav>
                         <header className="footer-title">Services</header>
