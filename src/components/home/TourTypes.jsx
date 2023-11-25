@@ -1,32 +1,33 @@
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-
-// import required modules
 import { Pagination } from 'swiper/modules';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
+// import useTourTypes from '../../hooks/useTourTypes';
+import useLoadData from '../../hooks/useLoadData';
+import SectionTitle from '../utilities/SectionTitle';
+// import { useQuery } from '@tanstack/react-query';
+// import axios from 'axios';
 
 const TourTypes = () => {
 
-    const { isPending, error, data: tourTypes, refetch } = useQuery({
-        queryKey: ['tourTypes'],
-        queryFn: async () => {
-            const res = await axios.get('/tourTypes.json')
-            return res.data
-        }
-    })
+    // const {  data: tourTypes } = useQuery({
+    //     queryKey: ['tourTypes'],
+    //     queryFn: async () => {
+    //         const res = await axios.get('/tourTypes.json')
+    //         return res.data
+    //     }
+    // })
 
-    console.log(tourTypes);
+    // console.log(tourTypes);
+
+    // const tourTypes = useTourTypes();
+    const tourTypes = useLoadData('/tourTypes.json', "tourTypes");
+    // const tourTypes = data;
+    // console.log(data);
 
     return (
         <div>
-            <h3 className='font-script text-center text-4xl mb-8'>Tour Types</h3>
+            <SectionTitle title='Tour Types'></SectionTitle>
 
 
             <Swiper
@@ -42,13 +43,10 @@ const TourTypes = () => {
                     tourTypes && tourTypes.map((tourType, index) => (
                         <SwiperSlide key={index}>
                             <div className='flex flex-col items-center justify-center'>
-                                {/* <img src={tourType.icon} alt="" className='w-32 h-32' /> */}
-                                <div className='w-32 h-32 border text-center flex items-center justify-center shadow rounded-lg mb-4 hover:shadow-lg focus:scale-95'>
+                                <div className='w-32 h-32 border text-center flex items-center justify-center shadow rounded-lg mb-2 hover:shadow-lg focus:scale-95'>
                                     <h2 className='text-7xl font-bold'>{tourType.icon}</h2>
-
                                 </div>
-                                <h2 className='text-xl font-medium'>{tourType.tourType}</h2>
-                                {/* <p className='text-gray-400'>{tourType.description}</p> */}
+                                <h2 className='text-lg font-normal text-gray-400'>{tourType.tourType}</h2>
                             </div>
                         </SwiperSlide>
                     ))

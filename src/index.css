@@ -34,11 +34,19 @@
 
 /* swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal */
 
+/* swiper swiper-initialized swiper-horizontal swiper-backface-hidden mySwiper */
 
 .swiper {
   padding-bottom: 2rem;
 }
 
-.swiper-pagination-bullets {
+/* .swiper-pagination-bullets {
   bottom: 0;
-}
+} */
+
+/* .swiper-container {
+  width: 100%;
+  max-width: 940px;
+  height: 500px;
+  margin: 0 auto;
+} */

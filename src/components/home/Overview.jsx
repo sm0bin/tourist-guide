@@ -6,6 +6,7 @@ import {
 } from '@tanstack/react-query'
 // import Skeleton from 'react-loading-skeleton';
 import axios from 'axios';
+import GoToBtn from '../utilities/GoToBtn';
 
 
 const Overview = () => {
@@ -86,7 +87,7 @@ const Overview = () => {
                             ))
                         }
                     </div>
-                    <button className="btn btn-info mx-auto flex">All Packages <FaArrowRight /></button>
+                    <GoToBtn btnTitle={'All Packages'} url={'/packages'} />
                 </TabPanel>
                 <TabPanel>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-8">
@@ -113,7 +114,7 @@ const Overview = () => {
                         }
 
                     </div>
-                    <button className="btn btn-info mx-auto flex">All Guides <FaArrowRight /></button>
+                    <GoToBtn btnTitle={'All Guides'} url={'/guides'} />
                 </TabPanel>
             </Tabs>
 
