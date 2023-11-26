@@ -2,28 +2,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
-// import useTourTypes from '../../hooks/useTourTypes';
 import useLoadData from '../../hooks/useLoadData';
 import SectionTitle from '../utilities/SectionTitle';
-// import { useQuery } from '@tanstack/react-query';
-// import axios from 'axios';
 
 const TourTypes = () => {
-
-    // const {  data: tourTypes } = useQuery({
-    //     queryKey: ['tourTypes'],
-    //     queryFn: async () => {
-    //         const res = await axios.get('/tourTypes.json')
-    //         return res.data
-    //     }
-    // })
-
-    // console.log(tourTypes);
-
-    // const tourTypes = useTourTypes();
     const tourTypes = useLoadData('/tourTypes.json', "tourTypes");
-    // const tourTypes = data;
-    // console.log(data);
 
     return (
         <div>
@@ -37,7 +20,7 @@ const TourTypes = () => {
                     clickable: true,
                 }}
                 modules={[Pagination]}
-                className="mySwiper"
+                className="mySwiper pb-8"
             >
                 {
                     tourTypes && tourTypes.map((tourType, index) => (

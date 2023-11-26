@@ -47,7 +47,7 @@ const Header = () => {
     return (
 
 
-        <div className="navbar fixed top-0 inset-x-0 z-50 text-white bg-blue-950/50 backdrop-blur-md">
+        <div className="navbar fixed top-0 inset-x-0 z-50 bg-white shadow">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-warning lg:hidden">
@@ -57,8 +57,8 @@ const Header = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <NavLink to="/" className="hidden md:flex gap-4">
-                    <img src="/travel-logo.svg" className="w-12 h-12" alt="" />
+                <NavLink to="/" className="hidden md:flex gap-2">
+                    <img src="/travel-logo.svg" className="w-12 h-12" alt="Tourist Guide Logo" />
                     <h1 className=" text-4xl text-left font-bold whitespace-nowrap dark:text-white">Tourist Guide</h1>
                 </NavLink>
             </div>
