@@ -1,24 +1,26 @@
 import { toast } from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { useState } from "react";
 
 const imgHostingApi = import.meta.env.VITE_IMG_HOSTING_API;
 
 const SignUp = () => {
-    const { signUp, updateUser, googleSignIn } = useAuth();
+    const { signUp, updateUser, googleSignIn, logout } = useAuth();
+    const [signUpError, setSignUpError] = useState("");
     const navigate = useNavigate();
-    const location = useLocation();
+    // const location = useLocation();
     const axiosPublic = useAxiosPublic();
 
     const success = userCredential => {
         const user = userCredential.user;
         console.log(user);
         if (user) {
-            toast.success("Login successful");
+            toast.success("Sign Up successful");
         }
-        navigate(location?.state?.from?.pathname || "/", { replace: true });
+        // navigate(location?.state?.from?.pathname || "/", { replace: true });
     }
 
     const failed = error => {
@@ -39,6 +41,29 @@ const SignUp = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
+
+
+        if (password.length < 6) {
+            setSignUpError('Password must be at least 6 characters long.');
+            return;
+        }
+        else if (!/[a-z]/.test(password)) {
+            setSignUpError('Password must contain at least one lowercase letter.');
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            setSignUpError('Password must contain at least one uppercase letter.');
+            return;
+        }
+        else if (!/[0-9]/.test(password)) {
+            setSignUpError('Password must contain at least one number.');
+            return;
+        }
+        else if (!/[!@#$%^&*()+=]/.test(password)) {
+            setSignUpError('Password must contain at least one special character.');
+            return;
+        }
+
         console.log(image);
 
         const formData = new FormData();
@@ -58,7 +83,17 @@ const SignUp = () => {
                         success(userCredential);
                         updateUser(name, imgUrl)
                             .then(() => {
-                                toast.success("Profile updated");
+                                console.log("Profile updated");
+                                logout()
+                                    .then(() => {
+                                        console.log("Initial logout.");
+                                        toast.success("Now Login with your email and password.");
+                                        // success(userCredential);
+                                        navigate("/auth/login", { replace: true });
+                                        form.reset();
+                                    }).catch((error) => {
+                                        console.error(error.message);
+                                    });
                             })
                             .catch((error) => {
                                 failed(error);
@@ -115,6 +150,9 @@ const SignUp = () => {
                     </label>
                     <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                 </div>
+                {
+                    signUpError && <p className='my-4 font-medium text-rose-500'>{signUpError}</p>
+                }
                 <div className="form-control mt-6">
                     <button className="btn btn-info">Sign Up</button>
                 </div>

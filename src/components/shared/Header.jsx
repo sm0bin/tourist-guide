@@ -13,18 +13,18 @@ const Header = () => {
     //     { label: 'OUR SHOP', path: '/shop' },
     //     { label: 'SIGN OUT', path: '/signout' },
     // ];
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
 
     // const { displayName, email, photoURL } = user || null;
 
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/community">Community</NavLink></li>
+        <li><NavLink to="/tours">Tour Packages</NavLink></li>
+        <li><NavLink to="/guides">Tour Guides</NavLink></li>
         <li><NavLink to="/blogs">Blogs</NavLink></li>
         <li><NavLink to="/about">About Us</NavLink></li>
         <li><NavLink to="/contact">Contact Us</NavLink></li>
-        <li><NavLink to="/tours">Tour Packages</NavLink></li>
-        <li><NavLink to="/guides">Tour Guides</NavLink></li>
+        <li><NavLink to="/community">Community</NavLink></li>
         {/* {
             user ?
                 <li><NavLink to="/signout">Sign Out</NavLink></li> :
@@ -33,7 +33,7 @@ const Header = () => {
     </>
 
     const handleSignOut = () => {
-        logOut()
+        logout()
             .then(() => {
                 toast.success("User logged out successfully");
             }).catch((error) => {
@@ -70,11 +70,17 @@ const Header = () => {
             <div className="navbar-end">
                 {user ?
                     <div className="dropdown dropdown-bottom dropdown-end">
-                        {<label tabIndex={0} className="btn btn-circle btn-ghost text-3xl m-1"><FaRegUserCircle /></label>}
-                        {/* <ul >
-                        <li><a>Item 1</a></li>
-                        <li><a>Item 2</a></li>
-                    </ul> */}
+                        <label tabIndex={0} className="btn btn-circle btn-ghost text-3xl m-1">
+                            {
+                                <div className="avatar">
+                                    <div className="w-8 rounded-full">
+                                        <img src={user?.photoURL} />
+                                    </div>
+                                </div>
+                                ||
+                                <FaRegUserCircle />
+                            }
+                        </label>
 
                         <div tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 text-black rounded-box ">
                             <div className="px-4 py-3 border-b">
