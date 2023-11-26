@@ -7,8 +7,13 @@ import useLoadData from '../../hooks/useLoadData';
 
 const Overview = () => {
 
-    const tourGuides = useLoadData('http://localhost:5500/guides', "tourGuides");
-    const tourPackages = useLoadData('http://localhost:5500/tours', "tourPackages");
+    const [tourGuidesPending, tourGuidesError, tourGuides] = useLoadData('/guides', "tourGuides");
+    const [tourPackagesPending, tourPackagesError, tourPackages] = useLoadData('/tours', "tourPackages");
+
+    if (tourGuidesPending || tourPackagesPending) return <div className="w-full h-screen flex items-center justify-center">
+        <span className="loading loading-ball loading-lg"></span>
+    </div>
+
 
     return (
         <div className='my-32'>

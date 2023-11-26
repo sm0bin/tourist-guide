@@ -6,7 +6,13 @@ import { Link } from "react-router-dom";
 
 const TourGuides = () => {
 
-    const tourGuides = useLoadData('http://localhost:5500/guides', "tourGuides");
+    const [isPending, error, tourGuides] = useLoadData('/guides', "tourGuides");
+
+    if (isPending) return <div className="w-full h-screen flex items-center justify-center">
+        <span className="loading loading-ball loading-lg"></span>
+    </div>
+
+
     return (
         <div className="mx-4 md:mx-8 lg:mx-auto max-w-7xl my-32">
             <Helmet>

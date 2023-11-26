@@ -4,14 +4,14 @@ import useAxiosPublic from "./useAxiosPublic";
 const useLoadData = (url, key) => {
     const axiosPublic = useAxiosPublic();
 
-    const { data } = useQuery({
+    const { isPending, error, data } = useQuery({
         queryKey: [key],
         queryFn: async () => {
             const res = await axiosPublic(url)
             return res.data
         }
     })
-    return data;
+    return [isPending, error, data];
 };
 
 export default useLoadData;

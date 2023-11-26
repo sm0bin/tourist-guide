@@ -11,7 +11,13 @@ import GoToBtn from '../utilities/GoToBtn';
 
 
 const TouristStory = () => {
-    const touristStory = useLoadData('/touristStory.json', "touristStory");
+    const [isPending, error, touristStory] = useLoadData('/touristStory.json', "touristStory");
+
+    if (isPending) return <div className="w-full h-screen flex items-center justify-center">
+        <span className="loading loading-ball loading-lg"></span>
+    </div>
+
+
     console.log(touristStory);
 
     return (

@@ -4,7 +4,12 @@ import SectionTitle from "../components/utilities/SectionTitle";
 import { Helmet } from "react-helmet-async";
 
 const TourPackages = () => {
-    const tourPackages = useLoadData('http://localhost:5500/tours', "tourPackages");
+    const [isPending, error, tourPackages] = useLoadData('/tours', "tourPackages");
+
+
+    if (isPending) return <div className="w-full h-screen flex items-center justify-center">
+        <span className="loading loading-ball loading-lg"></span>
+    </div>
 
     const getBadgeColor = (tourType) => {
         let badgeColor = '';
