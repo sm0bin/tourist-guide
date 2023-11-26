@@ -1,11 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+import useAxiosPublic from "./useAxiosPublic";
 
 const useLoadData = (url, key) => {
+    const axiosPublic = useAxiosPublic();
+
     const { data } = useQuery({
         queryKey: [key],
         queryFn: async () => {
-            const res = await axios.get(url)
+            const res = await axiosPublic(url)
             return res.data
         }
     })

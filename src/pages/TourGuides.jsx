@@ -2,6 +2,7 @@ import { FaArrowRight, FaStar } from "react-icons/fa";
 import useLoadData from "../hooks/useLoadData";
 import SectionTitle from "../components/utilities/SectionTitle";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 const TourGuides = () => {
 
@@ -61,7 +62,7 @@ const TourGuides = () => {
                                 <hr className="border" />
                                 <p>{item.education}</p>
                                 {/* <p className="text-gray-500 mt-4 mb-6 text-justify">{item.description}</p> */}
-                                <button className="btn btn-info">View Profile <FaArrowRight /></button>
+                                <Link to={`/guides/${item._id}`} className="btn btn-info">View Profile <FaArrowRight /></Link>
                                 {/* <div className='flex gap-4'>
                                     <button className="btn btn-outline btn-error text-lg"><FaRegHeart /></button>
                                     <button className="btn btn-info flex-grow">View Package</button>

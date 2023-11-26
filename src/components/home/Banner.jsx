@@ -6,6 +6,7 @@
 // import slide6 from "../../assets/home/06.png"
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import GoToBtn from "../utilities/GoToBtn";
 
 // const images = [slide1, slide2, slide3, slide4, slide5, slide6];
 const images = [
@@ -50,10 +51,11 @@ const Banner = () => {
                 {/* <div className="max-w-4xl drop-shadow-[0_0_2em_rgba(0,0,0)] "> */}
                 <h1 className="text-4xl font-bold text-white">Discover the Wonders of Bangladesh</h1>
                 <h3 className="text-3xl font-semibold text-white mb-6">Your Ultimate Travel Companion</h3>
-                <p className="text-lg text-white">The Tourist Guide site is an online platform that provides comprehensive information
+                <p className="text-lg text-white mb-4">The Tourist Guide site is an online platform that provides comprehensive information
                     and resources for travelers seeking guidance on popular destinations in Bangladesh.
                     Tourists can access detailed information of the attractive tourist spots and many more.</p>
-                <button className="btn btn-info mt-4">Start Your Adventure</button>
+                {/* <button className="btn btn-info mt-4">Start Your Adventure</button> */}
+                <GoToBtn btnTitle={"Start Your Adventure"} url={"/tours"} />
                 {/* </div> */}
             </div>
         </div>

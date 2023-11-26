@@ -6,6 +6,8 @@ import TourGuides from "../pages/TourGuides";
 import Auth from "../pages/Auth";
 import Login from "../components/auth/Login";
 import SignUp from "../components/auth/SignUp";
+import TourGuide from "../pages/TourGuide";
+
 
 export const router = createBrowserRouter([
     {
@@ -18,7 +20,7 @@ export const router = createBrowserRouter([
             { path: '/tours', element: <TourPackages></TourPackages> },
             { path: '/tours/:id', element: <h1>Tour Details</h1> },
             { path: "/guides", element: <TourGuides></TourGuides> },
-            { path: "/guides/:id", element: <h1>Guide Details</h1> },
+            { path: "/guides/:id", element: <TourGuide></TourGuide> },
             {
                 path: "/auth",
                 element: <Auth></Auth>,
