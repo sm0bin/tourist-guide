@@ -1,8 +1,9 @@
 import { FaArrowRight, FaRegHeart, FaStar } from 'react-icons/fa';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import GoToBtn from '../utilities/GoToBtn';
-import useLoadData from '../../hooks/useLoadData';
+import GoToBtn from '../../utilities/GoToBtn';
+import useLoadData from '../../../hooks/useLoadData';
+import "./Overview.css";
 
 
 const Overview = () => {
@@ -18,15 +19,15 @@ const Overview = () => {
     return (
         <div className='my-32'>
             <Tabs>
-                <TabList>
+                <TabList className="grid grid-cols-3 gap-4 mb-4 text-center">
                     <Tab>Overview</Tab>
-                    <Tab>Our Packages</Tab>
-                    <Tab>Meet Our Tour Guides</Tab>
+                    <Tab>Tour Packages</Tab>
+                    <Tab>Tour Guides</Tab>
                 </TabList>
 
                 <TabPanel>
                     <iframe
-                        width="100%"
+                        className='rounded-xl shadow w-full'
                         height="600px"
                         src="https://www.youtube.com/embed/Z44fFqBQQtg?si=y23mZULnJ37wQHHz"
                         title="YouTube video player"
@@ -35,11 +36,11 @@ const Overview = () => {
                         allowFullScreen></iframe>
                 </TabPanel>
                 <TabPanel>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                         {
                             tourPackages && tourPackages?.slice(0, 3).map((item, index) => (
                                 <div key={index} className="card bg-base-100 shadow hover:shadow-lg">
-                                    <figure><img src={item.imageUrl} alt={item.tripTitle} /></figure>
+                                    <figure><img src={item.thumbnail} alt={item.tripTitle} /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">{item.tripTitle}</h2>
                                         <div className='flex justify-between'>
@@ -60,11 +61,11 @@ const Overview = () => {
                     <GoToBtn btnTitle={'All Packages'} url={'/tours'} />
                 </TabPanel>
                 <TabPanel>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
                         {
                             tourGuides && tourGuides?.map((item, index) => (
-                                <div key={index} className="card flex-row   p-6 rounded-full bg-base-100 shadow hover:shadow-lg gap-4 ">
+                                <div key={index} className="card flex-row   p-6 rounded-full bg-base-100 shadow hover:shadow-lg gap-4 mb-8">
                                     <div>
                                         <div className="avatar relative">
                                             <div className="w-28 rounded-full">

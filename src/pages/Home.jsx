@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Banner from "../components/home/Banner";
-import Overview from "../components/home/Overview";
+import Overview from "../components/home/Overview/Overview";
 import TourTypes from "../components/home/TourTypes";
 import TouristStory from "../components/home/TouristStory";
 

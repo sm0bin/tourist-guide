@@ -8,6 +8,8 @@
   font-family: 'Poppins', sans-serif;
 }
 
+
+/* react-responsive-carousel */
 .carousel .thumbs-wrapper {
   text-align: center;
   width: 100%;
@@ -17,14 +19,11 @@
 .carousel .thumbs-wrapper .thumbs .thumb img {
   width: 100%;
   height: 70px;
-  /* background-size: cover; */
   object-fit: cover;
 }
 
 .carousel .thumbs-wrapper .thumbs {
-  /* width: 100%; */
   display: flex;
-  /* gap: .25rem */
 }
 
 .carousel .thumbs-wrapper .thumbs .thumb {
@@ -32,19 +31,46 @@
   margin-right: 0;
 }
 
-/* swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal */
 
-/* swiper swiper-initialized swiper-horizontal swiper-backface-hidden mySwiper */
+/* react-tab */
+.react-tabs__tab-list {
+  border: 0;
+}
 
+.react-tabs__tab {
+  margin: 0;
+  background: #fff;
+  color: #3b82f6;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border: 2px solid #3b82f6;
+  border-bottom: 2px solid #3b82f6;
+  transition: all .3s ease-in-out;
+}
 
+.react-tabs__tab--selected {
+  background: #3b82f6;
+  color: #fff;
+  border-radius: 0;
+}
 
-/* .swiper-pagination-bullets {
-  bottom: 0;
+.react-tabs__tab ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+/* .timeline-vertical { */
+
+/* --timeline-col-start: minmax(0, auto); */
+/* --col-start: minmax(0, auto);
+  grid-column: var(--col-start); */
+/* --timeline-col-start: minmax(0, auto);
+  grid-column: var(--timeline-col-start);
 } */
 
-/* .swiper-container {
-  width: 100%;
-  max-width: 940px;
-  height: 500px;
-  margin: 0 auto;
-} */
+.timeline-vertical:where(.timeline-snap-icon)>li {
+  --timeline-col-start: 1;
+  --timeline-row-start: 0.5rem;
+  grid-column: var(--timeline-col-start);
+}

@@ -1,10 +1,18 @@
 import { FaRegHeart } from "react-icons/fa";
-import useLoadData from "../hooks/useLoadData";
 import SectionTitle from "../components/utilities/SectionTitle";
 import { Helmet } from "react-helmet-async";
+import { useEffect, useState } from "react";
+import useLoadData from "../hooks/useLoadData";
+import { Link } from "react-router-dom";
 
 const TourPackages = () => {
     const [isPending, error, tourPackages] = useLoadData('/tours', "tourPackages");
+    // const [tourPackages, setTourPackages] = useState([])
+    // useEffect(() => {
+    //     fetch('/tourPackages.json')
+    //         .then(res => res.json())
+    //         .then(data => setTourPackages(data))
+    // }, [])
 
 
     if (isPending) return <div className="w-full h-screen flex items-center justify-center">
@@ -53,7 +61,7 @@ const TourPackages = () => {
                 {
                     tourPackages && tourPackages?.map((item, index) => (
                         <div key={index} className="card bg-base-100 shadow hover:shadow-lg">
-                            <figure><img src={item.imageUrl} alt={item.tripTitle} /></figure>
+                            <figure><img src={item.thumbnail} alt={item.tripTitle} /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">{item.tripTitle}</h2>
                                 <div className='flex justify-between'>
@@ -63,7 +71,7 @@ const TourPackages = () => {
                                 <p className="text-gray-500 mt-4 mb-6 text-justify">{item.description}</p>
                                 <div className='flex gap-4'>
                                     <button className="btn btn-outline btn-error text-lg"><FaRegHeart /></button>
-                                    <button className="btn btn-info flex-grow">View Package</button>
+                                    <Link to={`/tours/${item._id}`} className="btn btn-info flex-grow">View Package</Link>
                                 </div>
 
                             </div>

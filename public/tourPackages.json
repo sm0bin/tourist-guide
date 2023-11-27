@@ -1,179 +1,623 @@
 [
   {
-    "imageUrl": "https://source.unsplash.com/MrKPi-yajC0/640x360",
+    "thumbnail": "https://source.unsplash.com/MrKPi-yajC0/640x360",
+    "gallery": [
+      "https://source.unsplash.com/SqC8M0eYxEY",
+      "https://source.unsplash.com/Cdwi5n7Gwes",
+      "https://source.unsplash.com/daSgrMUzDyc",
+      "https://source.unsplash.com/anE4tvkHhLs",
+      "https://source.unsplash.com/9V5dyukvQ20",
+      "https://source.unsplash.com/oRsxtzxVmsY",
+      "https://source.unsplash.com/MrKPi-yajC0",
+      "https://source.unsplash.com/mO1_udD5iCs",
+      "https://source.unsplash.com/DWoOJ2C2uns",
+      "https://source.unsplash.com/_jxz7Fe1btc",
+      "https://source.unsplash.com/k7EDYStENI0",
+      "https://source.unsplash.com/WICc--aTNt8",
+      "https://source.unsplash.com/RfHhohVQLnQ",
+      "https://source.unsplash.com/Ph5VL5Tilto",
+      "https://source.unsplash.com/AMqrW1Sxx3g",
+      "https://source.unsplash.com/-rNBQWV5Uis"
+    ],
     "tourType": "Adventure",
-    "icon": "🌄",
     "tripTitle": "Mountain Expedition",
     "price": 150,
     "tourDetails": {
-      "duration": "7 days",
+      "duration": "5 days",
       "accommodation": "Alpine Chalets",
-      "activities": ["Mountain Climbing", "Zip-lining", "Bonfire Nights"]
+      "days": [
+        {
+          "day": 1,
+          "title": "Embark on an Exciting Adventure",
+          "details": "Kick off your journey with an exhilarating morning trek, followed by an afternoon of caving exploration. As the sun sets, indulge in the enchanting experience of stargazing in the crisp mountain air."
+        },
+        {
+          "day": 2,
+          "title": "Explore the Wilderness",
+          "details": "Dedicate a full day to immerse yourself in the wonders of nature. Take a leisurely walk through the wilderness, visit local villages to connect with the community, and enjoy the warmth of a campfire under the starlit sky."
+        },
+        {
+          "day": 3,
+          "title": "Reach the Summit of Majestic Peaks",
+          "details": "Embark on a challenging ascent to the summit of towering peaks. Revel in panoramic views that stretch as far as the eye can see. Camp overnight to savor the tranquility of the mountain wilderness."
+        },
+        {
+          "day": 4,
+          "title": "Thrilling River Expedition",
+          "details": "Embark on an adrenaline-pumping river rafting adventure. Explore caves along the riverbanks, and as night falls, set up camp by the river, surrounded by the soothing sounds of flowing water."
+        },
+        {
+          "day": 5,
+          "title": "Encounter Wildlife in its Habitat",
+          "details": "Embark on a wildlife safari to witness the beauty of nature in its raw form. Engage in bird watching and capture stunning moments through nature photography, creating memories that will last a lifetime."
+        }
+      ]
     },
     "description": "Embark on a thrilling 7-day Mountain Expedition, surrounded by breathtaking landscapes. Stay in cozy alpine chalets, challenge yourself with mountain climbing and zip-lining, and unwind under the stars during bonfire nights."
   },
   {
-    "imageUrl": "https://source.unsplash.com/Cdwi5n7Gwes/640x360",
+    "thumbnail": "https://source.unsplash.com/Cdwi5n7Gwes/640x360",
+    "gallery": [
+      "https://source.unsplash.com/AMqrW1Sxx3g",
+      "https://source.unsplash.com/oRsxtzxVmsY",
+      "https://source.unsplash.com/MrKPi-yajC0",
+      "https://source.unsplash.com/mO1_udD5iCs",
+      "https://source.unsplash.com/DWoOJ2C2uns"
+    ],
     "tourType": "Cultural",
-    "icon": "🏛️",
     "tripTitle": "Historical Heritage Tour",
     "price": 120,
     "tourDetails": {
       "duration": "5 days",
       "accommodation": "Heritage Hotels",
-      "activities": ["Guided Tours", "Museum Visits", "Cultural Performances"]
+      "days": [
+        {
+          "day": 1,
+          "title": "Discover Historical Marvels",
+          "details": "Embark on a guided tour to explore iconic landmarks like the Statue of Liberty, Ellis Island, and the Tenement Museum. Conclude the day with a delightful food tour, sampling the diverse culinary offerings of the city."
+        },
+        {
+          "day": 2,
+          "title": "Art and Culture Exploration",
+          "details": "Head uptown to visit Central Park, the sprawling urban oasis in the heart of Manhattan. Stroll through its scenic pathways and learn about its fascinating history. Visit the Metropolitan Museum of Art (The Met) and marvel at its impressive art collections from various cultures and time periods. Admire the grandeur of St. Patrick's Cathedral and the elegant architecture of Fifth Avenue."
+        },
+        {
+          "day": 3,
+          "title": "Historical Immersion",
+          "details": "Immerse yourself in the rich history of the city with visits to historic neighborhoods and landmarks. Explore the architectural wonders of the city, from historic brownstones to iconic skyscrapers. Engage in a guided tour of the Tenement Museum, gaining insights into the immigrant experience in early 20th-century New York."
+        },
+        {
+          "day": 4,
+          "title": "Cultural Performances",
+          "details": "Experience the vibrant cultural scene of the city with live performances and theater shows. Attend a Broadway play or musical for an unforgettable evening of entertainment. Conclude your cultural journey with a visit to local art galleries and exhibitions showcasing the diverse artistic expressions of the city."
+        },
+        {
+          "day": 5,
+          "title": "Farewell and Reflection",
+          "details": "Bid farewell to the city with a final exploration of hidden gems and local treasures. Reflect on the cultural immersion experience as you enjoy a farewell dinner at a traditional restaurant. Capture lasting memories of your historical heritage tour in the heart of the city."
+        }
+      ]
     },
     "description": "Immerse yourself in the rich cultural tapestry with a 5-day Historical Heritage Tour. Stay in elegant heritage hotels, explore historical sites with knowledgeable guides, visit museums, and witness captivating cultural performances."
   },
   {
-    "imageUrl": "https://source.unsplash.com/anE4tvkHhLs/640x360",
+    "thumbnail": "https://source.unsplash.com/anE4tvkHhLs/640x360",
+    "gallery": [
+      "https://source.unsplash.com/WICc--aTNt8",
+      "https://source.unsplash.com/Cdwi5n7Gwes",
+      "https://source.unsplash.com/RfHhohVQLnQ",
+      "https://source.unsplash.com/Ph5VL5Tilto",
+      "https://source.unsplash.com/AMqrW1Sxx3g"
+    ],
     "tourType": "Nature",
-    "icon": "🌿",
     "tripTitle": "Enchanted Forest Retreat",
     "price": 180,
     "tourDetails": {
-      "duration": "6 days",
+      "duration": "5 days",
       "accommodation": "Forest Cabins",
-      "activities": ["Nature Walks", "Bird Watching", "Treehouse Stay"]
+      "days": [
+        {
+          "day": 1,
+          "title": "Forest Arrival and Orientation",
+          "details": "Arrive at the enchanting forest retreat and settle into cozy cabins. Get oriented with the surroundings and enjoy a welcome dinner amidst the natural beauty of the forest."
+        },
+        {
+          "day": 2,
+          "title": "Nature Walks and Bird Watching",
+          "details": "Embark on guided nature walks through the lush forest trails. Engage in bird watching sessions, capturing glimpses of the diverse avian species that call the forest home. Explore hidden corners of the forest, discovering its flora and fauna."
+        },
+        {
+          "day": 3,
+          "title": "Treehouse Stay Experience",
+          "details": "Experience a unique overnight stay in a treehouse nestled high above the forest floor. Enjoy panoramic views of the surrounding canopy and stargaze from your elevated sanctuary. Immerse yourself in the tranquility of the forest at night."
+        },
+        {
+          "day": 4,
+          "title": "Forest Adventures and Tales",
+          "details": "Participate in forest adventures, including canopy walks and zip-lining experiences. Listen to tales and stories by the campfire, sharing the folklore and history of the enchanted forest. Connect with fellow travelers in a magical setting."
+        },
+        {
+          "day": 5,
+          "title": "Farewell and Departure",
+          "details": "Bid farewell to the enchanted forest, cherishing memories of nature's embrace. Participate in a closing ceremony, expressing gratitude for the rejuvenating retreat. Depart with a deeper connection to the natural world and a promise to return."
+        }
+      ]
     },
     "description": "Reconnect with nature on a 6-day Enchanted Forest Retreat. Stay in charming forest cabins, take leisurely nature walks, indulge in bird watching, and experience a unique overnight stay in a treehouse."
   },
   {
-    "imageUrl": "https://source.unsplash.com/DWoOJ2C2uns/640x360",
+    "thumbnail": "https://source.unsplash.com/DWoOJ2C2uns/640x360",
+    "gallery": [
+      "https://source.unsplash.com/_jxz7Fe1btc",
+      "https://source.unsplash.com/k7EDYStENI0",
+      "https://source.unsplash.com/WICc--aTNt8",
+      "https://source.unsplash.com/Cdwi5n7Gwes",
+      "https://source.unsplash.com/RfHhohVQLnQ"
+    ],
     "tourType": "Historical",
-    "icon": "🏰",
     "tripTitle": "Ancient Castle Exploration",
     "price": 200,
     "tourDetails": {
       "duration": "8 days",
       "accommodation": "Castle Suites",
-      "activities": ["Castle Tours", "Medieval Banquets", "Archery"]
+      "days": [
+        {
+          "day": 1,
+          "title": "Castle Arrival and Welcome Banquet",
+          "details": "Arrive at the majestic castle and be welcomed with a grand banquet. Explore the castle grounds, admiring the medieval architecture and scenic surroundings."
+        },
+        {
+          "day": 2,
+          "title": "Guided Castle Tours",
+          "details": "Embark on guided tours of the ancient castle, uncovering its rich history and stories of the past. Visit historic chambers, halls, and courtyards, marveling at the preserved artifacts and tapestries."
+        },
+        {
+          "day": 3,
+          "title": "Medieval Banquets and Festivities",
+          "details": "Indulge in medieval banquets and festivities within the castle walls. Experience the grandeur of medieval entertainment, including music, dance, and theatrical performances."
+        },
+        {
+          "day": 4,
+          "title": "Archery and Castle Grounds Exploration",
+          "details": "Try your hand at archery in the castle grounds, channeling the spirit of medieval knights. Explore the expansive castle grounds, discovering hidden gardens and scenic viewpoints."
+        },
+        {
+          "day": 5,
+          "title": "Village Excursion and Local Interactions",
+          "details": "Embark on an excursion to nearby villages, interacting with local communities and experiencing rural life. Learn about traditional crafts and customs, gaining insights into the cultural heritage of the region."
+        }
+      ]
     },
     "description": "Step back in time with an 8-day Ancient Castle Exploration. Stay in luxurious castle suites, explore ancient castles with guided tours, savor medieval banquets, and try your hand at archery in the castle grounds."
   },
   {
-    "imageUrl": "https://source.unsplash.com/mO1_udD5iCs/640x360",
+    "thumbnail": "https://source.unsplash.com/mO1_udD5iCs/640x360",
+    "gallery": [
+      "https://source.unsplash.com/DWoOJ2C2uns",
+      "https://source.unsplash.com/_jxz7Fe1btc",
+      "https://source.unsplash.com/WICc--aTNt8",
+      "https://source.unsplash.com/RfHhohVQLnQ",
+      "https://source.unsplash.com/Ph5VL5Tilto"
+    ],
     "tourType": "City",
-    "icon": "🌆",
     "tripTitle": "Metropolitan Adventure",
     "price": 130,
     "tourDetails": {
       "duration": "4 days",
       "accommodation": "City Hotels",
-      "activities": ["City Tours", "Shopping Spree", "Nightlife Excursion"]
+      "days": [
+        {
+          "day": 1,
+          "title": "City Arrival and Urban Exploration",
+          "details": "Arrive in the vibrant city and explore its urban landscapes. Take a stroll through bustling streets, immersing yourself in the energy and diversity of the metropolis."
+        },
+        {
+          "day": 2,
+          "title": "City Tours and Landmarks",
+          "details": "Embark on guided city tours, visiting iconic landmarks and architectural wonders. Discover the city's history and culture through visits to museums, art galleries, and historical sites."
+        },
+        {
+          "day": 3,
+          "title": "Shopping Spree and Culinary Delights",
+          "details": "Indulge in a shopping spree, exploring trendy boutiques and local markets. Delight your taste buds with a culinary journey, sampling diverse cuisines and local delicacies."
+        },
+        {
+          "day": 4,
+          "title": "Nightlife Excursion and Farewell",
+          "details": "Experience the excitement of the city's nightlife, from vibrant bars to live music venues. Conclude your metropolitan adventure with a farewell dinner, reminiscing about the urban exploration."
+        }
+      ]
     },
     "description": "Experience the vibrant energy of the city with a 4-day Metropolitan Adventure. Stay in central city hotels, explore urban landscapes with city tours, indulge in a shopping spree, and enjoy the exciting nightlife."
   },
   {
-    "imageUrl": "https://source.unsplash.com/Ph5VL5Tilto/640x360",
-    "tourType": "Beach",
-    "icon": "🏖️",
-    "tripTitle": "Tropical Paradise Getaway",
-    "price": 170,
-    "tourDetails": {
-      "duration": "7 days",
-      "accommodation": "Beachfront Resorts",
-      "activities": ["Snorkeling", "Sunset Cruises", "Beach Yoga"]
-    },
-    "description": "Escape to a tropical paradise with a 7-day Beach Getaway. Stay in luxurious beachfront resorts, indulge in snorkeling adventures, enjoy scenic sunset cruises, and find serenity with beachfront yoga sessions."
-  },
-  {
-    "imageUrl": "https://source.unsplash.com/v6A4nXxqkFo/640x360",
+    "thumbnail": "https://source.unsplash.com/v6A4nXxqkFo/640x360",
+    "gallery": [
+      "https://source.unsplash.com/N_au3KCcQng",
+      "https://source.unsplash.com/JBszu2VpC8k",
+      "https://source.unsplash.com/9W_yveWm5w4",
+      "https://source.unsplash.com/r_MqlohIVO8",
+      "https://source.unsplash.com/Ph5VL5Tilto"
+    ],
     "tourType": "Wildlife",
-    "icon": "🦓",
     "tripTitle": "Safari Expedition",
     "price": 190,
     "tourDetails": {
       "duration": "5 days",
       "accommodation": "Safari Lodges",
-      "activities": ["Game Drives", "Bush Walks", "Wildlife Photography"]
+      "days": [
+        {
+          "day": 1,
+          "title": "Arrival at Safari Paradise",
+          "details": "Arrive at the safari lodges and be welcomed to the heart of the wilderness. Enjoy a relaxing evening surrounded by nature's symphony and plan for the exciting days ahead."
+        },
+        {
+          "day": 2,
+          "title": "Game Drives and Bush Walks",
+          "details": "Embark on thrilling game drives, encountering majestic wildlife in their natural habitat. Engage in guided bush walks, gaining insights into the flora and fauna of the safari landscape."
+        },
+        {
+          "day": 3,
+          "title": "Wildlife Photography Sessions",
+          "details": "Dedicate the day to wildlife photography, capturing stunning moments of animals in their natural surroundings. Learn tips and tricks from professional wildlife photographers accompanying the expedition."
+        },
+        {
+          "day": 4,
+          "title": "Sunrise Safari and Relaxation",
+          "details": "Experience the magic of a sunrise safari, witnessing the savannah come to life. Spend the afternoon in relaxation, enjoying the amenities of the safari lodges and reflecting on your wildlife encounters."
+        },
+        {
+          "day": 5,
+          "title": "Farewell and Departure",
+          "details": "Bid farewell to the safari paradise with a final game drive. Share stories and experiences with fellow adventurers before departing. Take with you the memories of the incredible wildlife and landscapes."
+        }
+      ]
     },
     "description": "Embark on a thrilling 5-day Safari Expedition. Stay in comfortable safari lodges, explore the wilderness with game drives and bush walks, and capture stunning wildlife moments with dedicated wildlife photography sessions."
   },
   {
-    "imageUrl": "https://source.unsplash.com/dZKiXR9FYcM/640x360",
+    "thumbnail": "https://source.unsplash.com/dZKiXR9FYcM/640x360",
+    "gallery": [
+      "https://source.unsplash.com/r_MqlohIVO8",
+      "https://source.unsplash.com/Ph5VL5Tilto",
+      "https://source.unsplash.com/AMqrW1Sxx3g",
+      "https://source.unsplash.com/dZKiXR9FYcM",
+      "https://source.unsplash.com/JBszu2VpC8k"
+    ],
     "tourType": "Foods",
-    "icon": "🍲",
     "tripTitle": "Culinary Delights Tour",
     "price": 110,
     "tourDetails": {
       "duration": "3 days",
       "accommodation": "Foodie's Inn",
-      "activities": ["Gourmet Tasting", "Cooking Classes", "Local Food Markets"]
+      "days": [
+        {
+          "day": 1,
+          "title": "Gourmet Tasting Extravaganza",
+          "details": "Embark on a culinary adventure with a gourmet tasting session. Indulge in a variety of exquisite dishes prepared by renowned chefs, tantalizing your taste buds with diverse flavors."
+        },
+        {
+          "day": 2,
+          "title": "Hands-On Cooking Classes",
+          "details": "Immerse yourself in the art of cooking with hands-on classes led by expert chefs. Learn the secrets behind local delicacies and master the techniques to recreate them at home."
+        },
+        {
+          "day": 3,
+          "title": "Exploration of Local Food Markets",
+          "details": "Explore vibrant local food markets, discovering fresh produce, spices, and unique ingredients. Engage with local vendors, and perhaps, pick up some culinary souvenirs to cherish the memories of your gastronomic journey."
+        }
+      ]
     },
     "description": "Satisfy your taste buds with a 3-day Culinary Delights Tour. Stay in a foodie's inn, indulge in gourmet tastings, enhance your culinary skills with cooking classes, and explore local food markets for authentic flavors."
   },
   {
-    "imageUrl": "https://source.unsplash.com/r_MqlohIVO8/640x360",
+    "thumbnail": "https://source.unsplash.com/r_MqlohIVO8/640x360",
+    "gallery": [
+      "https://source.unsplash.com/Ph5VL5Tilto",
+      "https://source.unsplash.com/AMqrW1Sxx3g",
+      "https://source.unsplash.com/dZKiXR9FYcM",
+      "https://source.unsplash.com/N_au3KCcQng",
+      "https://source.unsplash.com/JBszu2VpC8k"
+    ],
     "tourType": "Relaxation",
-    "icon": "🏝️",
     "tripTitle": "Island Retreat",
     "price": 160,
     "tourDetails": {
       "duration": "6 days",
       "accommodation": "Island Resorts",
-      "activities": ["Spa Relaxation", "Sunbathing", "Island Excursions"]
+      "days": [
+        {
+          "day": 1,
+          "title": "Arrival in Paradise",
+          "details": "Arrive at the island resorts and be greeted by the tranquil sound of ocean waves and the warmth of the tropical sun. Enjoy a relaxing day by the pool or on the pristine beach."
+        },
+        {
+          "day": 2,
+          "title": "Spa Relaxation and Wellness",
+          "details": "Indulge in a day of spa relaxation and wellness. Pamper yourself with rejuvenating spa treatments, yoga sessions, and holistic wellness activities designed to nourish the body and soul."
+        },
+        {
+          "day": 3,
+          "title": "Sunbathing and Beach Bliss",
+          "details": "Spend the day soaking up the sun on the island's beautiful beaches. Engage in beach activities, swim in crystal-clear waters, and experience the blissful ambiance of island life."
+        },
+        {
+          "day": 4,
+          "title": "Island Excursions and Adventures",
+          "details": "Embark on island excursions to explore hidden coves, snorkel in vibrant coral reefs, and discover the natural beauty of the surrounding islands. Engage in water sports or simply enjoy the breathtaking scenery."
+        },
+        {
+          "day": 5,
+          "title": "Cultural Connections",
+          "details": "Immerse yourself in the local culture with visits to nearby villages, cultural performances, and interactions with the island community. Learn about traditional practices and customs."
+        },
+        {
+          "day": 6,
+          "title": "Farewell in Tropical Paradise",
+          "details": "Bid farewell to the island paradise with a beachside farewell. Reflect on the serenity and beauty of your retreat. Depart with a sense of tranquility and memories of a rejuvenating escape."
+        }
+      ]
     },
     "description": "Unwind in paradise with a 6-day Island Retreat. Stay in luxurious island resorts, pamper yourself with spa relaxation, soak up the sun while sunbathing, and explore the beauty of the surrounding islands with guided excursions."
   },
   {
-    "imageUrl": "https://source.unsplash.com/JBszu2VpC8k/640x360",
+    "thumbnail": "https://source.unsplash.com/JBszu2VpC8k/640x360",
+    "gallery": [
+      "https://source.unsplash.com/9W_yveWm5w4",
+      "https://source.unsplash.com/dZKiXR9FYcM",
+      "https://source.unsplash.com/r_MqlohIVO8",
+      "https://source.unsplash.com/_vL6mbbHZkI",
+      "https://source.unsplash.com/Ph5VL5Tilto"
+    ],
     "tourType": "Photography",
-    "icon": "📸",
     "tripTitle": "Pictorial Landscapes Expedition",
     "price": 140,
     "tourDetails": {
       "duration": "4 days",
       "accommodation": "Scenic Villas",
-      "activities": ["Photography Workshops", "Sunrise Shoots", "Nature Walks"]
+      "days": [
+        {
+          "day": 1,
+          "title": "Scenic Villa Arrival",
+          "details": "Arrive at the picturesque scenic villas nestled in the heart of nature. Capture the beauty of your surroundings as you settle into your comfortable accommodations."
+        },
+        {
+          "day": 2,
+          "title": "Photography Workshops",
+          "details": "Participate in photography workshops conducted by seasoned professionals. Learn new techniques, enhance your skills, and capture stunning shots of the surrounding landscapes."
+        },
+        {
+          "day": 3,
+          "title": "Sunrise Shoots and Nature Walks",
+          "details": "Rise early for sunrise photo shoots, capturing the first light illuminating the landscapes. Take leisurely nature walks, exploring hidden gems and photographing the diverse flora and fauna."
+        },
+        {
+          "day": 4,
+          "title": "Reflections and Departure",
+          "details": "Reflect on your photographic journey and the captivating landscapes you've documented. Conclude the expedition with a farewell session, sharing your favorite shots and bidding farewell to fellow photography enthusiasts."
+        }
+      ]
     },
     "description": "Capture the beauty of picturesque landscapes on a 4-day Photography Expedition. Stay in scenic villas, enhance your photography skills with workshops, capture stunning sunrise shots, and take leisurely nature walks for inspiration."
   },
   {
-    "imageUrl": "https://source.unsplash.com/_vL6mbbHZkI/640x360",
+    "thumbnail": "https://source.unsplash.com/MrKPi-yajC0/640x360",
+    "gallery": [
+      "https://source.unsplash.com/SqC8M0eYxEY",
+      "https://source.unsplash.com/Cdwi5n7Gwes",
+      "https://source.unsplash.com/daSgrMUzDyc",
+      "https://source.unsplash.com/anE4tvkHhLs",
+      "https://source.unsplash.com/9V5dyukvQ20"
+    ],
     "tourType": "Adventure",
-    "icon": "🌄",
-    "tripTitle": "Mountain Trekking",
-    "price": 155,
-    "tourDetails": {
-      "duration": "6 days",
-      "accommodation": "Mountain Cabins",
-      "activities": ["Trekking", "Caving", "Stargazing"]
-    },
-    "description": "Embark on an adventurous 6-day Mountain Trekking journey, exploring rugged terrains and staying in cozy mountain cabins. Engage in thrilling activities like trekking, caving, and enjoy mesmerizing stargazing nights."
-  },
-  {
-    "imageUrl": "https://source.unsplash.com/N_au3KCcQng/640x360",
-    "tourType": "Cultural",
-    "icon": "🏛️",
-    "tripTitle": "Cultural Immersion Experience",
-    "price": 125,
-    "tourDetails": {
-      "duration": "4 days",
-      "accommodation": "Cultural Homestays",
-      "activities": [
-        "Local Cultural Festivals",
-        "Traditional Crafts",
-        "Cooking Demonstrations"
-      ]
-    },
-    "description": "Immerse yourself in local traditions with a 4-day Cultural Immersion Experience. Stay in cultural homestays, participate in vibrant local cultural festivals, learn traditional crafts, and enjoy cooking demonstrations."
-  },
-  {
-    "imageUrl": "https://source.unsplash.com/9W_yveWm5w4/640x360",
-    "tourType": "Nature",
-    "icon": "🌿",
-    "tripTitle": "Botanical Garden Retreat",
-    "price": 185,
+    "tripTitle": "Mountain Expedition",
+    "price": 150,
     "tourDetails": {
       "duration": "5 days",
-      "accommodation": "Botanical Retreat Center",
-      "activities": [
-        "Botanical Garden Tours",
-        "Meditation Sessions",
-        "Nature Sketching"
+      "accommodation": "Alpine Chalets",
+      "days": [
+        {
+          "day": 1,
+          "title": "Embark on an Exciting Adventure",
+          "details": "Kick off your journey with an exhilarating morning trek, followed by an afternoon of caving exploration. As the sun sets, indulge in the enchanting experience of stargazing in the crisp mountain air."
+        },
+        {
+          "day": 2,
+          "title": "Explore the Wilderness",
+          "details": "Dedicate a full day to immerse yourself in the wonders of nature. Take a leisurely walk through the wilderness, visit local villages to connect with the community, and enjoy the warmth of a campfire under the starlit sky."
+        },
+        {
+          "day": 3,
+          "title": "Reach the Summit of Majestic Peaks",
+          "details": "Embark on a challenging ascent to the summit of towering peaks. Revel in panoramic views that stretch as far as the eye can see. Camp overnight to savor the tranquility of the mountain wilderness."
+        },
+        {
+          "day": 4,
+          "title": "Thrilling River Expedition",
+          "details": "Embark on an adrenaline-pumping river rafting adventure. Explore caves along the riverbanks, and as night falls, set up camp by the river, surrounded by the soothing sounds of flowing water."
+        },
+        {
+          "day": 5,
+          "title": "Encounter Wildlife in its Habitat",
+          "details": "Embark on a wildlife safari to witness the beauty of nature in its raw form. Engage in bird watching and capture stunning moments through nature photography, creating memories that will last a lifetime."
+        }
       ]
     },
-    "description": "Reconnect with nature's wonders on a 5-day Botanical Garden Retreat. Stay at a botanical retreat center, explore enchanting botanical gardens, indulge in meditation sessions, and express your creativity with nature sketching."
+    "description": "Embark on a thrilling 7-day Mountain Expedition, surrounded by breathtaking landscapes. Stay in cozy alpine chalets, challenge yourself with mountain climbing and zip-lining, and unwind under the stars during bonfire nights."
+  },
+  {
+    "thumbnail": "https://source.unsplash.com/Cdwi5n7Gwes/640x360",
+    "gallery": [
+      "https://source.unsplash.com/AMqrW1Sxx3g",
+      "https://source.unsplash.com/oRsxtzxVmsY",
+      "https://source.unsplash.com/MrKPi-yajC0",
+      "https://source.unsplash.com/mO1_udD5iCs",
+      "https://source.unsplash.com/DWoOJ2C2uns"
+    ],
+    "tourType": "Cultural",
+    "tripTitle": "Historical Heritage Tour",
+    "price": 120,
+    "tourDetails": {
+      "duration": "5 days",
+      "accommodation": "Heritage Hotels",
+      "days": [
+        {
+          "day": 1,
+          "title": "Discover Historical Marvels",
+          "details": "Begin your journey by exploring iconic landmarks such as the Statue of Liberty and Ellis Island. Immerse yourself in the rich history at the Tenement Museum, followed by a delightful food tour."
+        },
+        {
+          "day": 2,
+          "title": "Central Park and The Met",
+          "details": "Head uptown to visit Central Park, the sprawling urban oasis in the heart of Manhattan. Stroll through its scenic pathways and learn about its fascinating history. Visit the Metropolitan Museum of Art (The Met) and marvel at its impressive art collections from various cultures and time periods. Admire the grandeur of St. Patrick's Cathedral and the elegant architecture of Fifth Avenue."
+        },
+        {
+          "day": 3,
+          "title": "City Exploration",
+          "details": "Explore the vibrant neighborhoods of New York City, discovering its cultural diversity. Visit neighborhoods like Chinatown, Little Italy, and Harlem. Enjoy authentic cuisines, and experience the city's dynamic atmosphere."
+        },
+        {
+          "day": 4,
+          "title": "Brooklyn and Beyond",
+          "details": "Cross the iconic Brooklyn Bridge and explore the trendy borough of Brooklyn. Visit DUMBO, Brooklyn Heights, and Williamsburg. Enjoy panoramic views of the Manhattan skyline and delve into Brooklyn's artistic scene."
+        },
+        {
+          "day": 5,
+          "title": "Farewell and Reflection",
+          "details": "Conclude your cultural journey with a farewell day. Reflect on your experiences, revisit favorite spots, and savor the last moments in this vibrant city. Bid farewell with a heart full of memories."
+        }
+      ]
+    },
+    "description": "Immerse yourself in the rich cultural tapestry with a 5-day Historical Heritage Tour. Stay in elegant heritage hotels, explore historical sites with knowledgeable guides, visit museums, and witness captivating cultural performances."
+  },
+  {
+    "thumbnail": "https://source.unsplash.com/anE4tvkHhLs/640x360",
+    "gallery": [
+      "https://source.unsplash.com/WICc--aTNt8",
+      "https://source.unsplash.com/Cdwi5n7Gwes",
+      "https://source.unsplash.com/RfHhohVQLnQ",
+      "https://source.unsplash.com/Ph5VL5Tilto",
+      "https://source.unsplash.com/AMqrW1Sxx3g"
+    ],
+    "tourType": "Nature",
+    "tripTitle": "Enchanted Forest Retreat",
+    "price": 180,
+    "tourDetails": {
+      "duration": "5 days",
+      "accommodation": "Forest Cabins",
+      "days": [
+        {
+          "day": 1,
+          "title": "Arrival and Forest Welcome",
+          "details": "Arrive at the enchanting forest retreat and experience a warm welcome amidst nature's beauty. Settle into cozy forest cabins and immerse yourself in the serene surroundings."
+        },
+        {
+          "day": 2,
+          "title": "Nature Walks and Bird Watching",
+          "details": "Embark on guided nature walks to explore the hidden gems of the forest. Engage in bird watching to spot a variety of avian species. Connect with the flora and fauna in their natural habitat."
+        },
+        {
+          "day": 3,
+          "title": "Treehouse Adventure",
+          "details": "Experience a unique overnight stay in a treehouse. Immerse yourself in the sounds of the forest, surrounded by the magical ambiance. Enjoy a cozy night under the stars."
+        },
+        {
+          "day": 4,
+          "title": "Forest Meditation",
+          "details": "Indulge in a rejuvenating session of forest meditation. Allow the calming energy of the forest to relax your mind and body. Connect with nature in a profound and spiritual way."
+        },
+        {
+          "day": 5,
+          "title": "Farewell amidst Nature's Bounty",
+          "details": "Bid farewell to the enchanted forest with a heart full of memories. Take a final nature walk, savoring the beauty of the surroundings. Depart with a renewed connection to nature."
+        }
+      ]
+    },
+    "description": "Reconnect with nature on a 6-day Enchanted Forest Retreat. Stay in charming forest cabins, take leisurely nature walks, indulge in bird watching, and experience a unique overnight stay in a treehouse."
+  },
+  {
+    "thumbnail": "https://source.unsplash.com/DWoOJ2C2uns/640x360",
+    "gallery": [
+      "https://source.unsplash.com/_jxz7Fe1btc",
+      "https://source.unsplash.com/k7EDYStENI0",
+      "https://source.unsplash.com/WICc--aTNt8",
+      "https://source.unsplash.com/Cdwi5n7Gwes",
+      "https://source.unsplash.com/RfHhohVQLnQ"
+    ],
+    "tourType": "Historical",
+    "tripTitle": "Ancient Castle Exploration",
+    "price": 200,
+    "tourDetails": {
+      "duration": "5 days",
+      "accommodation": "Castle Suites",
+      "days": [
+        {
+          "day": 1,
+          "title": "Castle Arrival and Welcome",
+          "details": "Arrive at the majestic castle and experience a royal welcome. Settle into luxurious castle suites, surrounded by the rich history and elegance of the ancient fortress."
+        },
+        {
+          "day": 2,
+          "title": "Guided Tours through History",
+          "details": "Embark on guided tours through the ancient castle, exploring its storied halls, secret passages, and grand courtyards. Immerse yourself in the rich history and tales of bygone eras."
+        },
+        {
+          "day": 3,
+          "title": "Medieval Banquets and Festivities",
+          "details": "Participate in medieval banquets, feasting on sumptuous meals in the castle's grand banquet hall. Enjoy festivities, music, and entertainment reminiscent of medieval times."
+        },
+        {
+          "day": 4,
+          "title": "Archery at the Castle Grounds",
+          "details": "Experience the thrill of archery in the castle grounds. Learn the art of archery from skilled instructors and try your hand at hitting bullseyes in the historical setting."
+        },
+        {
+          "day": 5,
+          "title": "Exploration Beyond the Castle Walls",
+          "details": "Venture beyond the castle walls to explore the surrounding landscapes. Visit nearby villages, interact with locals, and appreciate the beauty of the countryside."
+        }
+      ]
+    },
+    "description": "Step back in time with an 8-day Ancient Castle Exploration. Stay in luxurious castle suites, explore ancient castles with guided tours, savor medieval banquets, and try your hand at archery in the castle grounds."
+  },
+  {
+    "thumbnail": "https://source.unsplash.com/mO1_udD5iCs/640x360",
+    "gallery": [
+      "https://source.unsplash.com/DWoOJ2C2uns",
+      "https://source.unsplash.com/_jxz7Fe1btc",
+      "https://source.unsplash.com/WICc--aTNt8",
+      "https://source.unsplash.com/RfHhohVQLnQ",
+      "https://source.unsplash.com/Ph5VL5Tilto"
+    ],
+    "tourType": "City",
+    "tripTitle": "Metropolitan Adventure",
+    "price": 130,
+    "tourDetails": {
+      "duration": "4 days",
+      "accommodation": "City Hotels",
+      "days": [
+        {
+          "day": 1,
+          "title": "City Arrival and Hotel Check-in",
+          "details": "Arrive in the bustling metropolis and check into your city hotel. Get acquainted with the vibrant energy of the city as you prepare for an exciting urban adventure."
+        },
+        {
+          "day": 2,
+          "title": "City Tours and Landmarks",
+          "details": "Embark on guided city tours, exploring iconic landmarks and cultural hotspots. Immerse yourself in the city's dynamic atmosphere and architectural wonders."
+        },
+        {
+          "day": 3,
+          "title": "Shopping Spree and Trendy Districts",
+          "details": "Indulge in a shopping spree through the city's trendy districts. Explore fashionable boutiques, unique stores, and discover the latest trends in urban fashion."
+        },
+        {
+          "day": 4,
+          "title": "Nightlife Excursion",
+          "details": "Experience the excitement of the city's nightlife. Visit vibrant bars, clubs, and entertainment venues. Dance the night away and create unforgettable memories in the city that never sleeps."
+        }
+      ]
+    },
+    "description": "Experience the vibrant energy of the city with a 4-day Metropolitan Adventure. Stay in central city hotels, explore urban landscapes with city tours, indulge in a shopping spree, and enjoy the exciting nightlife."
   }
 ]
