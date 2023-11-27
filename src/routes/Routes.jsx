@@ -8,6 +8,7 @@ import Login from "../components/auth/Login";
 import SignUp from "../components/auth/SignUp";
 import TourGuide from "../pages/TourGuide";
 import Tour from "../pages/Tour";
+import PrivateRoute from "./PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
             { path: '/tours/:id', element: <Tour></Tour> },
             { path: "/guides", element: <TourGuides></TourGuides> },
             { path: "/guides/:id", element: <TourGuide></TourGuide> },
+            { path: "/community", element: <h1>Community</h1> },
+            { path: "/blogs", element: <h1>Blogs</h1> },
+            { path: "/dashboard", element: <PrivateRoute><h1>Dashboard</h1></PrivateRoute> },
+
             {
                 path: "/auth",
                 element: <Auth></Auth>,

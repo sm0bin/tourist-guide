@@ -6,7 +6,7 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
 
     if (loading) {
-        return <div className="text-center min-h-[70vh] flex items-center justify-center">
+        return <div className="w-full min-h-screen flex items-center justify-center">
             <span className="loading loading-bars loading-lg"></span>
         </div>
     }
@@ -16,7 +16,7 @@ const PrivateRoute = ({ children }) => {
     }
 
     return (
-        <Navigate state={{ from: location }} to="/login"></Navigate>
+        <Navigate state={{ from: location }} to="/auth/login"></Navigate>
     );
 };
 
