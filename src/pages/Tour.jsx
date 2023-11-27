@@ -1,14 +1,18 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import SectionTitle from "../components/utilities/SectionTitle";
 import useLoadData from "../hooks/useLoadData";
 import TitleH3 from "../components/utilities/TitleH3";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { FaCalendarWeek, FaHotel } from "react-icons/fa";
+import { FaArrowRight, FaCalendarWeek, FaHotel } from "react-icons/fa";
+import BookingForm from "../components/auth/BookingForm";
+import GuideCard from "../components/shared/GuideCard";
+import GoToBtn from "../components/utilities/GoToBtn";
 
 const Tour = () => {
     const { id } = useParams();
     const [isPending, error, tour] = useLoadData(`/tours/${id}`, "tour");
+    const [tourGuidesPending, tourGuidesError, tourGuides] = useLoadData('/guides', "tourGuides");
 
     if (isPending) return <div className="w-full h-screen flex items-center justify-center">
         <span className="loading loading-ball loading-lg"></span>
@@ -34,7 +38,7 @@ const Tour = () => {
                                 <TitleH3 title={tripTitle}></TitleH3>
                                 <button className="btn rounded-full btn-info btn-outline btn-sm">{tourType}</button>
                             </div>
-                            <h4 className="font-medium text-gray-500 text-xl ">Price: <span className="text-blue-500">${price}</span></h4>
+                            <h4 className="font-medium text-gray-500 text-xl ">Price: <span className="text-blue-400">${price}</span></h4>
                         </div>
                     </div>
                     {/* <div className="divider"></div> */}
@@ -51,8 +55,8 @@ const Tour = () => {
 
                             <h3 className="text-2xl font-semibold mb-2">Overview</h3>
                             <p className="text-lg text-gray-500 mb-8">{description}</p>
-                            <h4 className="text-xl leading-relaxed font-semibold text-gray-500"><FaCalendarWeek className="inline text-blue-500" /> Duration: <span className="text-blue-500">{tourDetails?.duration}</span></h4>
-                            <h4 className="text-xl leading-relaxed font-semibold text-gray-500"><FaHotel className="inline  text-blue-500" /> Accommodation: <span className="text-blue-500">{tourDetails?.accommodation}</span></h4>
+                            <h4 className="text-xl leading-relaxed font-semibold text-gray-500"><FaCalendarWeek className="inline text-blue-400" /> Duration: <span className="text-blue-400">{tourDetails?.duration}</span></h4>
+                            <h4 className="text-xl leading-relaxed font-semibold text-gray-500"><FaHotel className="inline  text-blue-400" /> Accommodation: <span className="text-blue-400">{tourDetails?.accommodation}</span></h4>
                         </TabPanel> */}
 
 
@@ -62,8 +66,8 @@ const Tour = () => {
                             <div className="mb-8">
                                 <h3 className="text-2xl font-semibold mb-2">Overview</h3>
                                 <p className="text-lg text-gray-500 mb-6">{description}</p>
-                                <h4 className="text-xl leading-loose font-medium text-gray-500 mb-3"><FaCalendarWeek className="inline text-blue-500 text-4xl mr-2" /> Duration: <span className="text-blue-500 font-semibold">{tourDetails?.duration}</span></h4>
-                                <h4 className="text-xl leading-loose font-medium text-gray-500 mb-3"><FaHotel className="inline  text-blue-500 text-4xl mr-2" /> Accommodation: <span className="text-blue-500 font-semibold">{tourDetails?.accommodation}</span></h4>
+                                <h4 className="text-xl leading-loose font-medium text-gray-500 mb-3"><FaCalendarWeek className="inline text-blue-400 text-4xl mr-2" /> Duration: <span className="text-blue-400 font-semibold">{tourDetails?.duration}</span></h4>
+                                <h4 className="text-xl leading-loose font-medium text-gray-500 mb-3"><FaHotel className="inline  text-blue-400 text-4xl mr-2" /> Accommodation: <span className="text-blue-400 font-semibold">{tourDetails?.accommodation}</span></h4>
                             </div>
                             <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
 
@@ -75,10 +79,10 @@ const Tour = () => {
                                                 index !== 0 && <hr />
                                             }
                                             <div className="timeline-middle">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 text-blue-500"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 text-blue-400"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
                                             </div>
                                             <div className={`timeline-end  mb-10`}>
-                                                <time className=" capitalize font-medium  text-lg bg-blue-500 text-white px-6 py-2 rounded-full mb-3">Day {item.day}</time>
+                                                <time className=" capitalize font-medium  text-lg bg-blue-400 text-white px-6 py-2 rounded-full mb-3">Day {item.day}</time>
                                                 <div className="text-2xl font-semibold mt-4 mb-2">{item.title}</div>
                                                 <p className="text-gray-500">{item.details}</p>
                                             </div>
@@ -106,10 +110,28 @@ const Tour = () => {
                             </div>
                         </TabPanel>
                     </Tabs>
+                    <div className="divider"></div>
+                    <div>
+                        <div className="flex justify-between">
+                            <TitleH3 title='Tour Guides'></TitleH3>
+                            <Link to="/guides" className="btn btn-info btn-outline btn-sm rounded-full">All Guides <FaArrowRight /></Link>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+
+                            {
+                                tourGuides && tourGuides?.slice(0, 4).map((guide, index) => (
+                                    <GuideCard key={index} guide={guide} />
+                                ))
+                            }
+
+                        </div>
+                    </div>
 
                 </div>
 
 
+
+                <BookingForm guides={tourGuides} tour={tour}></BookingForm>
             </div>
 
 

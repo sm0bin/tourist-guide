@@ -4,6 +4,8 @@ import 'react-tabs/style/react-tabs.css';
 import GoToBtn from '../../utilities/GoToBtn';
 import useLoadData from '../../../hooks/useLoadData';
 import "./Overview.css";
+import GuideCard from '../../shared/GuideCard';
+import TitleH3 from '../../utilities/TitleH3';
 
 
 const Overview = () => {
@@ -64,23 +66,8 @@ const Overview = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
                         {
-                            tourGuides && tourGuides?.map((item, index) => (
-                                <div key={index} className="card flex-row   p-6 rounded-full bg-base-100 shadow hover:shadow-lg gap-4 mb-8">
-                                    <div>
-                                        <div className="avatar relative">
-                                            <div className="w-28 rounded-full">
-                                                <img src={item.profilePicture} />
-                                            </div>
-                                            <button className="badge badge-warning gap-2 absolute bottom-0 left-1/2"><FaStar />{item.rating}</button>
-                                        </div>
-                                    </div>
-                                    <div className="flex-grow">
-                                        <h2 className="card-title font-bold text-2xl">{item.name}</h2>
-                                        <h2 className="font-medium text-lg mb-2">{item.contactDetails?.email}</h2>
-                                        <button className="btn btn-info btn-sm rounded-full">View Profile <FaArrowRight /></button>
-
-                                    </div>
-                                </div>
+                            tourGuides && tourGuides?.map((guide, index) => (
+                                <GuideCard key={index} guide={guide} />
                             ))
                         }
 
@@ -88,6 +75,9 @@ const Overview = () => {
                     <GoToBtn btnTitle={'All Guides'} url={'/guides'} />
                 </TabPanel>
             </Tabs>
+
+
+
 
         </div>
     );

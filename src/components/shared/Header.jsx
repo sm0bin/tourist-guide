@@ -57,9 +57,9 @@ const Header = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <NavLink to="/" className="hidden md:flex gap-2">
+                <NavLink to="/" className="hidden md:flex items-center gap-2">
                     <img src="/travel-logo.svg" className="w-12 h-12" alt="Tourist Guide Logo" />
-                    <h1 className=" text-4xl text-left font-bold whitespace-nowrap dark:text-white">Tourist Guide</h1>
+                    <h1 className=" text-4xl text-left font-bold whitespace-nowrap dark:text-white text-blue-400">Tourist <span className="text-yellow-500">Guide</span></h1>
                 </NavLink>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -73,7 +73,7 @@ const Header = () => {
                         <label tabIndex={0} className="btn btn-circle btn-ghost text-3xl m-1">
                             {
                                 <div className="avatar">
-                                    <div className="w-8 rounded-full">
+                                    <div className="w-12 rounded-full border-blue-300 border-4">
                                         <img src={user?.photoURL} />
                                     </div>
                                 </div>

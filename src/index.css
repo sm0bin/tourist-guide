@@ -40,19 +40,20 @@
 .react-tabs__tab {
   margin: 0;
   background: #fff;
-  color: #3b82f6;
+  color: #60a5fa;
   padding: 1rem 2rem;
   font-size: 1.25rem;
   font-weight: 500;
-  border: 2px solid #3b82f6;
-  border-bottom: 2px solid #3b82f6;
+  border: 2px solid #60a5fa;
+  border-bottom: 2px solid #60a5fa;
   transition: all .3s ease-in-out;
+  border-radius: .5rem;
 }
 
 .react-tabs__tab--selected {
-  background: #3b82f6;
-  color: #fff;
-  border-radius: 0;
+  background: #60a5fa;
+  color: #111;
+  border-radius: .5rem;
 }
 
 .react-tabs__tab ul {

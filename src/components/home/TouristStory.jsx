@@ -26,7 +26,7 @@ const TouristStory = () => {
 
 
             <Swiper
-                loop={true}
+                // loop={true}
                 direction={'vertical'}
                 slidesPerView={1}
                 spaceBetween={40}
@@ -56,7 +56,7 @@ const TouristStory = () => {
 
 
                                 <p className='text-gray-400 mt-2 mb-2 max-w-2xl'>{story.quote}</p>
-                                <h2 className='text-2xl font-semibold text-blue-500'>{story.name}</h2>
+                                <h2 className='text-2xl font-semibold text-blue-400'>{story.name}</h2>
                                 <h2 className=' text-gray-500'>{story.designation}</h2>
                             </div>
                         </SwiperSlide>

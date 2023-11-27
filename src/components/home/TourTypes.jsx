@@ -33,7 +33,7 @@ const TourTypes = () => {
                                 <div className='w-32 h-32 border text-center flex items-center justify-center shadow rounded-lg mb-2 group-hover:shadow-lg focus:scale-95'>
                                     <h2 className='text-7xl font-bold'>{tourType.icon}</h2>
                                 </div>
-                                <h2 className='text-lg font-normal text-gray-400 group-hover:text-blue-500'>{tourType.tourType}</h2>
+                                <h2 className='text-lg font-normal text-gray-400 group-hover:text-blue-400'>{tourType.tourType}</h2>
                             </div>
                         </SwiperSlide>
                     ))

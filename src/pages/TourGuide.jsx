@@ -32,14 +32,14 @@ const TourGuide = () => {
                         }
                     </div>
                     <div className="divider my-3"></div>
-                    {/* <h3 className="font-semibold text-xl text-blue-500 mb-3">Experience</h3> */}
+                    {/* <h3 className="font-semibold text-xl text-blue-400 mb-3">Experience</h3> */}
                     {/* <hr className="border my-2" /> */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-grow">
 
                         {
                             workExperience && workExperience.map((exp, index) => (
                                 <div key={index} className="shadow-md w-full p-6 rounded-lg">
-                                    <h3 className="font-semibold text-xl text-blue-500 mb-3">{exp.position}</h3>
+                                    <h3 className="font-semibold text-xl text-blue-400 mb-3">{exp.position}</h3>
                                     <hr className="border my-2" />
                                     <p className="text-gray-500 leading-loose">Company: <span className="text-gray-600 font-semibold">{exp.company}</span></p>
                                     <p className="text-gray-500 leading-loose">Duration: <span className="text-gray-600 font-semibold">{exp.duration}</span></p>
@@ -49,7 +49,7 @@ const TourGuide = () => {
                     </div>
                     {/* <div className="shadow-md w-max p-6 rounded-lg"> */}
                     <div className="mt-6">
-                        <h3 className="font-semibold text-xl text-blue-500 mb-3">Contact Details</h3>
+                        <h3 className="font-semibold text-xl text-blue-400 mb-3">Contact Details</h3>
                         <hr className="border my-2" />
 
                         <div className="md:flex justify-between gap-2">
