@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "./useAuth";
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5500'
+    baseURL: import.meta.env.VITE_SERVER,
+    withCredentials: true
 });
 
 const useAxiosSecure = () => {
@@ -11,23 +12,23 @@ const useAxiosSecure = () => {
     const { logOut } = useAuth();
 
     // Add a request interceptor
-    axios.interceptors.request.use(function (config) {
+    axiosSecure.interceptors.request.use(function (config) {
+        // Do something before request is sent
         const token = localStorage.getItem('token');
         if (!token) {
             logOut();
             navigate('/login');
         }
-
         config.headers.authorization = `Bearer ${token}`;
         return config;
-
     }, function (error) {
         // Do something with request error
         return Promise.reject(error);
     });
 
+
     // Add a response interceptor
-    axios.interceptors.response.use(function (response) {
+    axiosSecure.interceptors.response.use(function (response) {
         return response;
     }, function (error) {
         const { status } = error.response;

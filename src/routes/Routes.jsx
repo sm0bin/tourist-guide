@@ -11,6 +11,7 @@ import SignUp from "../components/auth/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import ToursOfTypes from "../pages/ToursOfTypes";
 import TouristDashboard from "../pages/TouristDashboard";
+import AllStories from "../pages/AllStories";
 
 
 export const router = createBrowserRouter([
@@ -26,6 +27,7 @@ export const router = createBrowserRouter([
             { path: '/tours/:id', element: <PrivateRoute><Tour></Tour></PrivateRoute> },
             { path: "/guides", element: <Guides></Guides> },
             { path: "/guides/:id", element: <Guide></Guide> },
+            { path: "/stories", element: <AllStories></AllStories> },
             { path: "/community", element: <h1>Community</h1> },
             { path: "/blogs", element: <h1>Blogs</h1> },
             { path: "/dashboard", element: <PrivateRoute><TouristDashboard></TouristDashboard></PrivateRoute> },

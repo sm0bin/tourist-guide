@@ -42,6 +42,7 @@ const Login = () => {
             })
             .catch((error) => {
                 failed(error);
+                setBtnLoading(false);
             });
     };
 

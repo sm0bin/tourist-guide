@@ -1,0 +1,58 @@
+[
+  {
+    "img": "https://source.unsplash.com/6W4F62sN_yI",
+    "name": "Alice Johnson",
+    "designation": "Adventure Enthusiast",
+    "rating": 4.8,
+    "story": "Absolutely loved my experience! The guides were knowledgeable, and the adventure was thrilling."
+  },
+  {
+    "img": "https://source.unsplash.com/MTZTGvDsHFY",
+    "name": "Bob Smith",
+    "designation": "Cultural Explorer",
+    "rating": 4.5,
+    "story": "A fascinating journey into diverse cultures. The guides made the history come alive!"
+  },
+  {
+    "img": "https://source.unsplash.com/HQPE4SweHRY",
+    "name": "Eva Martinez",
+    "designation": "Nature Lover",
+    "rating": 4.9,
+    "story": "The beauty of nature unfolded before my eyes. An unforgettable experience with great guides!"
+  },
+  {
+    "img": "https://source.unsplash.com/5aGUyCW_PJw",
+    "name": "David Lee",
+    "designation": "History Buff",
+    "rating": 4.7,
+    "story": "As a history enthusiast, this tour exceeded my expectations. Highly recommended for history lovers!"
+  },
+  {
+    "img": "https://source.unsplash.com/bqe0J0b26RQ",
+    "name": "Sophia Rodriguez",
+    "designation": "Nature Explorer",
+    "rating": 4.5,
+    "story": "The natural beauty of Bangladesh left me in awe. [Tour Website Name] made the experience seamless and unforgettable!"
+  },
+  {
+    "img": "https://source.unsplash.com/cF-4JdVtVCc",
+    "name": "Emily Chen",
+    "designation": "Adventure Seeker",
+    "rating": 4.8,
+    "story": "An adventure lover's paradise! The guides at [Tour Website Name] ensured every moment was filled with excitement and discovery."
+  },
+  {
+    "img": "https://source.unsplash.com/ILip77SbmOE",
+    "name": "Raj Patel",
+    "designation": "Culinary Explorer",
+    "rating": 4.6,
+    "story": "A gastronomic delight! The culinary experiences curated by [Tour Website Name] were a highlight of my trip to Bangladesh."
+  },
+  {
+    "img": "https://source.unsplash.com/_XIUcteveNQ",
+    "name": "Aisha Khan",
+    "designation": "Photography Enthusiast",
+    "rating": 4.9,
+    "story": "Capturing the essence of Bangladesh was a dream come true. [Tour Website Name] provided the perfect blend of picturesque landscapes and cultural richness."
+  }
+]

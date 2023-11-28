@@ -7,26 +7,34 @@ import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
 import SectionTitle from '../utilities/SectionTitle';
 import GoToBtn from '../utilities/GoToBtn';
+// import axios from 'axios';
+// import { useEffect, useState } from 'react';
 
 
 
-const TouristStory = () => {
-    const [isPending, error, touristStory] = useLoadData('/touristStory.json', "touristStory");
+const Stories = () => {
+    const [isPending, error, stories] = useLoadData('/stories', "stories");
 
     if (isPending) return <div className="w-full h-screen flex items-center justify-center">
         <span className="loading loading-ball loading-lg"></span>
     </div>
 
 
-    console.log(touristStory);
+    // const [stories, setStories] = useState([]);
+    // useEffect(() => {
+    //     axios('/stories.json')
+    //         .then(res => setStories(res.data))
+    //         .catch(err => console.log(err))
+    // }, []);
+    // console.log(stories);
 
     return (
         <div className='my-32'>
-            <SectionTitle title='Tourist Story'></SectionTitle>
+            <SectionTitle title='Tourist Stories'></SectionTitle>
 
 
             <Swiper
-                // loop={true}
+                loop={true}
                 direction={'vertical'}
                 slidesPerView={1}
                 spaceBetween={40}
@@ -38,10 +46,9 @@ const TouristStory = () => {
                 className="mySwiper h-80 p-4"
             >
                 {
-                    touristStory && touristStory.map((story, index) => (
+                    stories && stories?.slice(0, 6).map((story, index) => (
                         <SwiperSlide key={index}>
                             <div className='flex flex-col items-center justify-center text-center'>
-                                {/* <img src={story.img} alt="" className='w-32 h-32' /> */}
                                 <div className="avatar mb-2">
                                     <div className="w-24 rounded-full border-4 border-blue-300">
                                         <img src={story.img} />
@@ -55,7 +62,7 @@ const TouristStory = () => {
                                 />
 
 
-                                <p className='text-gray-400 mt-2 mb-2 max-w-2xl'>{story.quote}</p>
+                                <p className='text-gray-400 mt-2 mb-2 max-w-2xl'>{story.story}</p>
                                 <h2 className='text-2xl font-semibold text-blue-400'>{story.name}</h2>
                                 <h2 className=' text-gray-500'>{story.designation}</h2>
                             </div>
@@ -69,4 +76,4 @@ const TouristStory = () => {
     );
 };
 
-export default TouristStory;
+export default Stories;

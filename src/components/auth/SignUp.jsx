@@ -29,9 +29,9 @@ const SignUp = () => {
         const errorCode = error.code;
 
         toast.error(errorMessage);
-
         console.error(errorCode);
         console.error(errorMessage);
+        setBtnLoading(false);
     }
 
     const handleSubmit = (e) => {
@@ -96,6 +96,7 @@ const SignUp = () => {
                                         form.reset();
                                     }).catch((error) => {
                                         console.error(error.message);
+                                        setBtnLoading(false);
                                     });
                             })
                             .catch((error) => {
