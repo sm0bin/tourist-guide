@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Banner from "../components/home/Banner";
-import Overview from "../components/home/Overview/Overview";
+import Overview from "../components/home/Overview";
 import TourTypes from "../components/home/TourTypes";
 import TouristStory from "../components/home/TouristStory";
 
@@ -15,7 +15,6 @@ const Home = () => {
                 {/* <Overview></Overview> */}
                 <TourTypes></TourTypes>
                 {/* <TouristStory></TouristStory> */}
-                <button className="btn" onClick={() => localStorage.setItem('token', "habijabi")}>token</button>
             </div>
         </div>
     );

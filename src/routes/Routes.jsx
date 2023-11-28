@@ -1,14 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../Layouts/Root";
 import Home from "../pages/Home";
-import TourPackages from "../pages/TourPackages";
-import TourGuides from "../pages/TourGuides";
+import Guides from "../pages/Guides";
+import Guide from "../pages/Guide";
+import Tours from "../pages/Tours";
+import Tour from "../pages/Tour";
 import Auth from "../pages/Auth";
 import Login from "../components/auth/Login";
 import SignUp from "../components/auth/SignUp";
-import TourGuide from "../pages/TourGuide";
-import Tour from "../pages/Tour";
 import PrivateRoute from "./PrivateRoute";
+import ToursOfTypes from "../pages/ToursOfTypes";
 
 
 export const router = createBrowserRouter([
@@ -19,10 +20,11 @@ export const router = createBrowserRouter([
             { path: "/", element: <Home></Home> },
             { path: "/about", element: <h1>About</h1> },
             { path: "/contact", element: <h1>Contact</h1> },
-            { path: '/tours', element: <TourPackages></TourPackages> },
+            { path: '/tours', element: <Tours></Tours> },
+            { path: '/tours/types/:type', element: <ToursOfTypes></ToursOfTypes> },
             { path: '/tours/:id', element: <Tour></Tour> },
-            { path: "/guides", element: <TourGuides></TourGuides> },
-            { path: "/guides/:id", element: <TourGuide></TourGuide> },
+            { path: "/guides", element: <Guides></Guides> },
+            { path: "/guides/:id", element: <Guide></Guide> },
             { path: "/community", element: <h1>Community</h1> },
             { path: "/blogs", element: <h1>Blogs</h1> },
             { path: "/dashboard", element: <PrivateRoute><h1>Dashboard</h1></PrivateRoute> },

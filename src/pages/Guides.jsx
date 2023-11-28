@@ -4,9 +4,9 @@ import SectionTitle from "../components/utilities/SectionTitle";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
-const TourGuides = () => {
+const Guides = () => {
 
-    const [isPending, error, tourGuides] = useLoadData('/guides', "tourGuides");
+    const [isPending, error, guides] = useLoadData('/guides', "guides");
 
     if (isPending) return <div className="w-full h-screen flex items-center justify-center">
         <span className="loading loading-ball loading-lg"></span>
@@ -25,7 +25,7 @@ const TourGuides = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-8">
 
                 {/* {
-                    tourGuides && tourGuides?.map((item, index) => (
+                    guides && guides?.map((item, index) => (
                         <div key={index} className="card flex-row   p-4 rounded-2xl bg-base-100 shadow hover:shadow-lg gap-4 ">
                             <div>
                                 <div className="avatar relative">
@@ -45,7 +45,7 @@ const TourGuides = () => {
                     ))
                 } */}
                 {
-                    tourGuides && tourGuides?.map((item, index) => (
+                    guides && guides?.map((item, index) => (
                         <div key={index} className="card bg-base-100 shadow hover:shadow-lg group">
                             <figure className="relative ">
                                 <img className="w-full" src={item.profilePicture} alt={item.name} />
@@ -84,4 +84,4 @@ const TourGuides = () => {
     );
 };
 
-export default TourGuides;
+export default Guides;

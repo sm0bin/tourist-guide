@@ -4,6 +4,7 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import useLoadData from '../../hooks/useLoadData';
 import SectionTitle from '../utilities/SectionTitle';
+import { Link } from 'react-router-dom';
 
 const TourTypes = () => {
     const [isPending, error, tourTypes] = useLoadData('/types', "tourTypes");
@@ -29,12 +30,12 @@ const TourTypes = () => {
                 {
                     tourTypes && tourTypes.map((tourType, index) => (
                         <SwiperSlide key={index}>
-                            <div className='flex flex-col items-center justify-center group'>
+                            <Link to={`/tours/types/${tourType?.tourType}`} className='flex flex-col items-center justify-center group'>
                                 <div className='w-32 h-32 border text-center flex items-center justify-center shadow rounded-lg mb-2 group-hover:shadow-lg focus:scale-95'>
                                     <h2 className='text-7xl font-bold'>{tourType.icon}</h2>
                                 </div>
                                 <h2 className='text-lg font-normal text-gray-400 group-hover:text-blue-400'>{tourType.tourType}</h2>
-                            </div>
+                            </Link>
                         </SwiperSlide>
                     ))
                 }

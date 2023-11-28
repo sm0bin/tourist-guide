@@ -2,18 +2,18 @@ import { useParams } from "react-router-dom";
 import useLoadData from "../hooks/useLoadData";
 import { FaEnvelope, FaMapMarkerAlt, FaPhone, FaStar } from "react-icons/fa";
 
-const TourGuide = () => {
+const Guide = () => {
     const params = useParams();
-    const [isPending, error, tourGuide] = useLoadData(`/guides/${params.id}`, "tourGuide");
+    const [isPending, error, guide] = useLoadData(`/guides/${params.id}`, "guide");
 
     if (isPending) return <div className="w-screen h-screen flex items-center justify-center">
         <span className="loading loading-ball loading-lg"></span>
     </div>
 
-    const { name, profilePicture, contactDetails, education, skills, workExperience, rating } = tourGuide;
+    const { name, profilePicture, contactDetails, education, skills, workExperience, rating } = guide;
     const { email, phone, location } = contactDetails;
 
-    console.log(tourGuide);
+    console.log(guide);
     return (
         <div className=" mx-4 md:mx-8 lg:mx-auto max-w-7xl min-h-screen flex justify-center items-center">
             <div className="card lg:card-side bg-base-100 lg:shadow-md">
@@ -69,7 +69,7 @@ const TourGuide = () => {
     );
 };
 
-export default TourGuide;
+export default Guide;
 
 // {
 //     "name": "John Doe",
