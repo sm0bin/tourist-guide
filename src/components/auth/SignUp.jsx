@@ -13,6 +13,7 @@ const SignUp = () => {
     const navigate = useNavigate();
     // const location = useLocation();
     const axiosPublic = useAxiosPublic();
+    const [btnLoading, setBtnLoading] = useState(false);
 
     const success = userCredential => {
         const user = userCredential.user;
@@ -35,6 +36,7 @@ const SignUp = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setBtnLoading(true);
         const form = e.target;
 
         const image = form.image.files[0];
@@ -88,6 +90,7 @@ const SignUp = () => {
                                     .then(() => {
                                         console.log("Initial logout.");
                                         toast.success("Now Login with your email and password.");
+                                        setBtnLoading(false);
                                         // success(userCredential);
                                         navigate("/auth/login", { replace: true });
                                         form.reset();
@@ -154,7 +157,15 @@ const SignUp = () => {
                     signUpError && <p className='my-4 font-medium text-rose-500'>{signUpError}</p>
                 }
                 <div className="form-control mt-6">
-                    <button className="btn btn-info">Sign Up</button>
+                    <button className="btn btn-info" disabled={btnLoading}>
+                        {
+                            btnLoading ?
+                                <>
+                                    <span className="loading loading-spinner"></span>
+                                    Signing Up...
+                                </> : "Sign Up"
+                        }
+                    </button>
                 </div>
             </form>
             <div className="text-sm mt-4 font-medium text-gray-400 dark:text-gray-300">

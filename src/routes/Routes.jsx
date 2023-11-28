@@ -10,6 +10,7 @@ import Login from "../components/auth/Login";
 import SignUp from "../components/auth/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import ToursOfTypes from "../pages/ToursOfTypes";
+import TouristDashboard from "../pages/TouristDashboard";
 
 
 export const router = createBrowserRouter([
@@ -22,12 +23,12 @@ export const router = createBrowserRouter([
             { path: "/contact", element: <h1>Contact</h1> },
             { path: '/tours', element: <Tours></Tours> },
             { path: '/tours/types/:type', element: <ToursOfTypes></ToursOfTypes> },
-            { path: '/tours/:id', element: <Tour></Tour> },
+            { path: '/tours/:id', element: <PrivateRoute><Tour></Tour></PrivateRoute> },
             { path: "/guides", element: <Guides></Guides> },
             { path: "/guides/:id", element: <Guide></Guide> },
             { path: "/community", element: <h1>Community</h1> },
             { path: "/blogs", element: <h1>Blogs</h1> },
-            { path: "/dashboard", element: <PrivateRoute><h1>Dashboard</h1></PrivateRoute> },
+            { path: "/dashboard", element: <PrivateRoute><TouristDashboard></TouristDashboard></PrivateRoute> },
 
             {
                 path: "/auth",

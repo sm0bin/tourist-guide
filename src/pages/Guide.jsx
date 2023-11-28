@@ -16,7 +16,7 @@ const Guide = () => {
     console.log(guide);
     return (
         <div className=" mx-4 md:mx-8 lg:mx-auto max-w-7xl min-h-screen flex justify-center items-center">
-            <div className="card lg:card-side bg-base-100 lg:shadow-md">
+            <div className="card lg:card-side bg-base-100 w-full lg:shadow-md">
                 <figure className="relative">
                     <img className="w-full h-full" src={profilePicture} alt="Album" />
                     <div className="btn btn-warning absolute top-3 right-3 w-max text-lg"><FaStar /> {rating}</div>
@@ -38,7 +38,7 @@ const Guide = () => {
 
                         {
                             workExperience && workExperience.map((exp, index) => (
-                                <div key={index} className="shadow-md w-full p-6 rounded-lg">
+                                <div key={index} className="border w-full p-6 rounded-lg">
                                     <h3 className="font-semibold text-xl text-blue-400 mb-3">{exp.position}</h3>
                                     <hr className="border my-2" />
                                     <p className="text-gray-500 leading-loose">Company: <span className="text-gray-600 font-semibold">{exp.company}</span></p>

@@ -1,19 +1,14 @@
 import { toast } from "react-hot-toast";
-import useAuth from "../../hooks/useAuth";
-import { useNavigate } from "react-router-dom";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { addMonths } from 'date-fns';
+import Swal from "sweetalert2";
 
 const imgHostingApi = import.meta.env.VITE_IMG_HOSTING_API;
 
 const BookingForm = ({ guides, tour }) => {
-    const { signUp, updateUser, googleSignIn, logout } = useAuth();
-    const [signUpError, setSignUpError] = useState("");
-    const navigate = useNavigate();
-    // const location = useLocation();
     const axiosPublic = useAxiosPublic();
     const [startDate, setStartDate] = useState(new Date());
 
@@ -38,38 +33,60 @@ const BookingForm = ({ guides, tour }) => {
         const guide = form.guide.value;
         const date = startDate;
 
-        console.log(image);
+        Swal.fire({
+            title: "Confirm your Booking?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Confirm"
+        }).then((result) => {
+            if (result.isConfirmed) {
 
-        const formData = new FormData();
-        formData.append("image", image);
 
-        axiosPublic.post(imgHostingApi, formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data'
+
+
+                console.log(image);
+                const formData = new FormData();
+                formData.append("image", image);
+
+                // Uploading Image and getting URL
+                axiosPublic.post(imgHostingApi, formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }).then((res) => {
+                    const imageUrl = res.data.data.display_url;
+                    console.log(imageUrl);
+
+                    const bookingTour = {
+                        touristName: name,
+                        touristEmail: email,
+                        touristImage: imageUrl,
+                        date: date,
+                        price: tour.price,
+                        guideId: guide,
+                        tourId: tour._id
+                    }
+                    console.log(bookingTour);
+
+                    // Post booking to server
+                    axiosPublic.post("/bookings", bookingTour)
+                        .then((res) => {
+                            console.log(res.data);
+                            // toast.success("Package Booked Successfully.");
+                            Swal.fire({
+                                title: "Booked!",
+                                text: "Package Booked Successfully.",
+                                icon: "success"
+                            });
+                        }).catch((error) => {
+                            failed(error);
+                        });
+                })
             }
-        }).then((res) => {
-            const imageUrl = res.data.data.display_url;
-            console.log(imageUrl);
-
-            const bookingTour = {
-                touristName: name,
-                touristEmail: email,
-                touristImage: imageUrl,
-                date: date,
-                price: tour.price,
-                guideId: guide,
-                tourId: tour._id
-            }
-            console.log(bookingTour);
-            // Post booking to server
-            axiosPublic.post("/bookings", bookingTour)
-                .then((res) => {
-                    console.log(res.data);
-                    toast.success("Booking successful");
-                }).catch((error) => {
-                    failed(error);
-                });
-        })
+        });
 
     };
 
@@ -137,9 +154,7 @@ const BookingForm = ({ guides, tour }) => {
                 <label className="label">
                     <h5 className="label-text font-medium text-lg">Price: <span className="text-blue-400">${tour.price}</span></h5>
                 </label>
-                {
-                    signUpError && <p className='my-4 font-medium text-rose-500'>{signUpError}</p>
-                }
+
                 <div className="form-control">
                     <button className="btn btn-info">Book Now</button>
                 </div>

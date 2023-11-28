@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useContext } from "react";
 import { toast } from "react-hot-toast";
@@ -89,7 +89,7 @@ const Header = () => {
                             </div>
                             <ul className="py-2">
                                 <li>
-                                    <a>Dashboard</a>
+                                    <NavLink to="/dashboard">Dashboard</NavLink>
                                 </li>
                                 <li>
                                     <a>Settings</a>
@@ -98,7 +98,7 @@ const Header = () => {
                                     <a>Earnings</a>
                                 </li>
                                 <li>
-                                    <button onClick={handleSignOut} className="">Sign out</button>
+                                    <button onClick={handleSignOut} className="">Logout</button>
                                 </li>
                             </ul>
                         </div>

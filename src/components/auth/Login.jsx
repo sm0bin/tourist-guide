@@ -2,12 +2,14 @@ import { toast } from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+import { useState } from "react";
 
 
 const Login = () => {
     const { login, googleSignIn } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
+    const [btnLoading, setBtnLoading] = useState(false);
 
     const success = userCredential => {
         const user = userCredential.user;
@@ -30,9 +32,13 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        login(e.target.email.value, e.target.password.value)
+        const form = e.target;
+        setBtnLoading(true);
+        login(form.email.value, form.password.value)
             .then((userCredential) => {
                 success(userCredential);
+                setBtnLoading(false);
+                form.reset();
             })
             .catch((error) => {
                 failed(error);
@@ -70,7 +76,16 @@ const Login = () => {
                     <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                 </div>
                 <div className="form-control mt-6">
-                    <button className="btn btn-info">Login</button>
+                    <button className="btn btn-info" disabled={btnLoading}>
+                        {
+                            btnLoading ?
+                                <>
+                                    <span className="loading loading-spinner"></span>
+                                    Logging in...
+                                </> : "Login"
+                        }
+
+                    </button>
                 </div>
             </form>
             <div className="text-sm mt-4 font-medium text-gray-400 dark:text-gray-300">
