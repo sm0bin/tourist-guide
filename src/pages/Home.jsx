@@ -12,7 +12,7 @@ const Home = () => {
             </Helmet>
             <Banner></Banner>
             <div className="mx-4 md:mx-8 lg:mx-auto max-w-7xl space-y-32 my-32">
-                {/* <Overview></Overview> */}
+                <Overview></Overview>
                 <TourTypes></TourTypes>
                 <Stories></Stories>
             </div>

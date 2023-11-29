@@ -3,6 +3,7 @@ import useAuth from "../../hooks/useAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { useState } from "react";
+import { failed } from "../utilities/Functions";
 
 
 const Login = () => {
@@ -18,16 +19,6 @@ const Login = () => {
             toast.success("Login successful");
         }
         navigate(location?.state?.from?.pathname || "/", { replace: true });
-    }
-
-    const failed = error => {
-        const errorMessage = error.message;
-        const errorCode = error.code;
-
-        toast.error(errorMessage);
-
-        console.error(errorCode);
-        console.error(errorMessage);
     }
 
     const handleSubmit = (e) => {

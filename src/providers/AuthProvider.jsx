@@ -48,12 +48,12 @@ const AuthProvider = ({ children }) => {
                 const userInfo = {
                     name: user.displayName,
                     email: user.email,
-                    photo: user.photoURL
+                    imageUrl: user.photoURL
 
                 };
                 axiosPublic.post("/jwt", userInfo)
                     .then(res => {
-                        console.log(res.data.token);
+                        // console.log(res.data.token);
                         if (res.data.token) {
                             localStorage.setItem('token', res.data.token);
                             setLoading(false);

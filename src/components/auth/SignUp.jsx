@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useState } from "react";
+import { failed } from "../utilities/Functions";
 
 const imgHostingApi = import.meta.env.VITE_IMG_HOSTING_API;
 
@@ -22,16 +23,6 @@ const SignUp = () => {
             toast.success("Sign Up successful");
         }
         // navigate(location?.state?.from?.pathname || "/", { replace: true });
-    }
-
-    const failed = error => {
-        const errorMessage = error.message;
-        const errorCode = error.code;
-
-        toast.error(errorMessage);
-        console.error(errorCode);
-        console.error(errorMessage);
-        setBtnLoading(false);
     }
 
     const handleSubmit = (e) => {
@@ -101,14 +92,17 @@ const SignUp = () => {
                             })
                             .catch((error) => {
                                 failed(error);
+                                setBtnLoading(false);
                             });
                     })
                     .catch((error) => {
                         failed(error);
+                        setBtnLoading(false);
                     });
             })
             .catch(error => {
                 failed(error);
+                setBtnLoading(false);
             })
     };
 

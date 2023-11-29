@@ -5,39 +5,42 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { addMonths } from 'date-fns';
 import Swal from "sweetalert2";
+import { failed } from "../utilities/Functions";
+import { useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+
 
 const imgHostingApi = import.meta.env.VITE_IMG_HOSTING_API;
 
-const BookingForm = ({ guides, tour }) => {
+const BookingForm = ({ guides, tour, setShowConfetti }) => {
+    const { user } = useAuth();
     const axiosPublic = useAxiosPublic();
     const [startDate, setStartDate] = useState(new Date());
+    const navigate = useNavigate();
+    const axiosSecure = useAxiosSecure();
 
 
-    const failed = error => {
-        const errorMessage = error.message;
-        const errorCode = error.code;
 
-        toast.error(errorMessage);
-
-        console.error(errorCode);
-        console.error(errorMessage);
-    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
 
         const image = form.image.files[0];
-        const name = form.name.value;
-        const email = form.email.value;
-        const guide = form.guide.value;
+        const touristName = form.name.value;
+        const touristEmail = form.email.value;
+        const [guideId, guideName] = form.guide.value.split(",");
         const date = startDate;
 
         Swal.fire({
             title: "Confirm your Booking?",
-            text: "You won't be able to revert this!",
+            text: "Confirm your Booking at My Bookings page",
             icon: "warning",
             showCancelButton: true,
+            // showDenyButton: true,
+            // denyButtonColor: "#66dd80",
+            // denyButtonText: "Confirm your Booking",
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Confirm"
@@ -57,17 +60,21 @@ const BookingForm = ({ guides, tour }) => {
                         'Content-Type': 'multipart/form-data'
                     }
                 }).then((res) => {
-                    const imageUrl = res.data.data.display_url;
-                    console.log(imageUrl);
+                    const touristImage = res.data.data.display_url;
+                    console.log(touristImage);
 
                     const bookingTour = {
-                        touristName: name,
-                        touristEmail: email,
-                        touristImage: imageUrl,
-                        date: date,
+                        userEmail: user.email,
+                        touristName,
+                        touristEmail,
+                        touristImage,
+                        date,
+                        guideId,
+                        guideName,
+                        tourId: tour._id,
+                        tourName: tour.tripTitle,
                         price: tour.price,
-                        guideId: guide,
-                        tourId: tour._id
+                        status: "In Review"
                     }
                     console.log(bookingTour);
 
@@ -76,11 +83,45 @@ const BookingForm = ({ guides, tour }) => {
                         .then((res) => {
                             console.log(res.data);
                             // toast.success("Package Booked Successfully.");
-                            Swal.fire({
-                                title: "Booked!",
-                                text: "Package Booked Successfully.",
-                                icon: "success"
-                            });
+                            // Swal.fire({
+                            //     title: "Booked!",
+                            //     text: "Package Booked Successfully.",
+                            //     icon: "success"
+                            // });
+                            axiosSecure.post('/tourists/bookings', { email: user.email, tourId: tour._id })
+                                .then(res => {
+                                    console.log(res.data);
+                                    toast.success("Package Booked Successfully.");
+
+                                    if (res.data.bookings.length > 3) {
+                                        setShowConfetti(true);
+
+                                        Swal.fire({
+                                            title: "Congratulations!",
+                                            text: "You have booked more than 3 packages. You have won a discount coupon.",
+                                            icon: "success",
+                                            confirmButtonText: "Claim Coupon"
+
+                                        }).then((result) => {
+                                            if (result.isConfirmed) {
+                                                // navigate('/dashboard');
+                                                form.reset();
+                                                setShowConfetti(false);
+                                                // navigate('/dashboard');
+                                                axiosSecure.post('/tourists/coupon', { email: user.email, coupon: "applicable" })
+                                                    .then(res => {
+                                                        console.log(res.data);
+                                                        toast.success("Coupon Claimed Successfully.");
+                                                        navigate('/dashboard');
+                                                    })
+                                                    .catch(err => failed(err));
+                                            }
+                                        })
+                                    }
+                                })
+                                .catch(err => failed(err));
+
+
                         }).catch((error) => {
                             failed(error);
                         });
@@ -95,6 +136,7 @@ const BookingForm = ({ guides, tour }) => {
 
     return (
         <div className="card shrink-0 w-full max-w-lg h-max shadow bg-base-100 p-6 pt-0">
+
             <h3 className="text-center font-script text-3xl text-blue-400">Book Now</h3>
             <form onSubmit={handleSubmit} className="card-body p-0">
                 <div className="form-control">
@@ -146,7 +188,7 @@ const BookingForm = ({ guides, tour }) => {
                         <option disabled selected hidden>Select Guide</option>
                         {
                             guides && guides?.map((guide, index) => (
-                                <option key={index} value={guide._id}>{guide.name}</option>
+                                <option key={index} value={`${guide._id},${guide.name}`}>{guide.name}</option>
                             ))
                         }
                     </select>
