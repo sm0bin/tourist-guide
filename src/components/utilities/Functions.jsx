@@ -2,8 +2,8 @@ import { toast } from 'react-hot-toast';
 
 
 const failed = error => {
-    const errorMessage = error.message;
-    const errorCode = error.code;
+    const errorMessage = error?.message;
+    const errorCode = error?.code;
 
     toast.error(errorMessage);
 

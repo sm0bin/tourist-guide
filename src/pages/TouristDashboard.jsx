@@ -2,10 +2,11 @@ import { toast } from "react-hot-toast";
 import TitleH3 from "../components/utilities/TitleH3";
 import useAuth from "../hooks/useAuth";
 import useAxiosSecure from "../hooks/useAxiosSecure";
-import useLoadDataSecure from "../hooks/useLoadDataSecure";
 import { failed, getTourTypeBadgeColor, getStatusBadgeColor } from "../components/utilities/Functions";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import useLoadDataSecure from "../hooks/useLoadDataSecure";
 
 
 const TouristDashboard = () => {
@@ -13,29 +14,44 @@ const TouristDashboard = () => {
     // if (!user) return null;
     const { displayName, email, photoURL } = user;
     const axiosSecure = useAxiosSecure();
-    // const [isPendingMyBookings, errorMyBookings, myBookings] = useLoadDataSecure("/bookings", "bookings", { email: email });
+    const [isPendingMyBookings, errorMyBookings, myBookings, refetchMyBookings] = useLoadDataSecure(`/bookings/${email}`, "bookings");
+    const [isPendingMyWishlist, errorMyWishlist, myWishlist, refetchMyWishlist] = useLoadDataSecure(`/tourists/wishlist/${email}`, "wishlist");
+    const [isPendingCoupon, errorCoupon, coupon, refetchCoupon] = useLoadDataSecure(`/tourists/coupon/${email}`, "coupon");
 
-    const { isPending, error, data: myBookings } = useQuery({
-        queryKey: ["bookings"],
-        queryFn: async () => {
-            const res = await axiosSecure(`/bookings/${user.email}`)
-            return res.data
-        }
-    })
-    const { isPending: isPendingMyWishlist, error: errorMyWishlist, data: myWishlist } = useQuery({
-        queryKey: ["wishlist"],
-        queryFn: async () => {
-            const res = await axiosSecure(`/tourists/wishlist/${user.email}`)
-            return res.data
-        }
-    })
+    // const { isPending: isPendingMyBookings, error, data: myBookings, refetch: refetchMyBookings } = useQuery({
+    //     queryKey: ["bookings"],
+    //     queryFn: async () => {
+    //         const res = await axiosSecure(`/bookings/${user.email}`)
+    //         return res.data
+    //     }
+    // })
+
+    // const { isPending: isPendingMyWishlist, error: errorMyWishlist, data: myWishlist, refetch: refetchMyWishlist } = useQuery({
+    //     queryKey: ["wishlist"],
+    //     queryFn: async () => {
+    //         const res = await axiosSecure(`/tourists/wishlist/${user.email}`)
+    //         return res.data
+    //     }
+    // })
+
+    // const { isPending: isPendingCoupon, error: errorCoupon, data: coupon, refetch: refetchCoupon } = useQuery({
+    //     queryKey: ["coupon"],
+    //     queryFn: async () => {
+    //         const res = await axiosSecure(`/tourists/coupon/${user.email}`)
+    //         return res.data
+    //     }
+    // })
+
+    // console.log(coupon);
+
+    if (isPendingMyBookings || isPendingMyWishlist) return <div className="w-full h-screen flex items-center justify-center">
+        <span className="loading loading-ball loading-lg"></span>
+    </div>
 
     // axiosSecure.get("/bookings/user", { email: email })
     //     .then(res => {
     //         console.log(res.data);
     //     }).catch(err => failed(err));
-
-
 
 
     const handleSubmit = (e) => {
@@ -55,23 +71,107 @@ const TouristDashboard = () => {
                 console.log(res.data);
                 toast.success("Story Shared Successfully");
             })
+    }
+
+    const handlePay = () => {
+        Swal.fire({
+            title: "Confirm Payment?",
+            text: "You are about to pay for this package.",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Pay"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: "Confirmed!",
+                    text: "Payment Successful.",
+                    icon: "success"
+                });
+            }
+        });
+    }
+
+    const handleBookingCancel = (id) => {
+        console.log(id);
+        Swal.fire({
+            title: "Confirm Cancellation?",
+            text: "You are about to cancel this booking.",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Cancel Booking",
+            cancelButtonText: "No, Don't Cancel"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                // axiosSecure.delete(`/bookings/${id}`)
+                //     .then(res => {
+                //         console.log(res);
+                //     }).catch(error => failed(error));
+
+                axiosSecure.post(`/tourists/bookings/${id}`, { email: user.email })
+                    .then(res => {
+
+                        console.log(res);
+                        toast.success("Booking Cancelled");
+                        refetchMyBookings();
+                    }).catch(error => failed(error));
 
 
 
+            }
+        });
+    }
+
+    const handleApplyCoupon = (id, price) => {
+        axiosSecure.post(`/tourists/coupon`, { email: user.email, coupon: "applied" })
+            .then(res => {
+                console.log(res.data);
+                toast.success("Coupon Applied");
+
+                if (res.data.coupon === "applied") {
+                    axiosSecure.put(`/bookings/${id}`, { price: price * 0.7 })
+                        .then(res => {
+                            console.log(res.data);
+                            toast.success("Discount Applied Successfully");
+                            refetchMyBookings();
+                        }).catch(err => failed(err));
+                }
+                refetchCoupon();
+            }).catch(err => failed(err));
+
+    }
+
+
+    const handleDeleteFromWishlist = (id) => {
+        axiosSecure.post(`/tourists/wishlist/remove`, { id, email: user.email })
+            .then(res => {
+                console.log(res.data);
+                toast.success("Removed from wishlist");
+                refetchMyWishlist();
+            }).catch(err => failed(err));
     }
 
     return (
         <div className=" mx-4 md:mx-8 lg:mx-auto max-w-7xl grid gap-6 my-32">
-            <div className="card lg:card-side bg-base-100 w-full lg:border">
-                <figure className="w-1/3">
-                    <img className="w-full h-full" src={photoURL} alt="Album" />
-                </figure>
-                <div className="card-body">
-                    <h2 className=" text-4xl font-script text-blue-400">{displayName}</h2>
-                    <h2 className="font-normal text-xl text-gray-400 mb-2">{email}</h2>
+            <div className="grid grid-cols-3 gap-6">
 
-                    <div className="divider my-3"></div>
+                {/* Profile Details */}
+                <div className="card border gap-4 p-6">
+                    <figure className="rounded-lg grow">
+                        <img className="w-full h-full" src={photoURL} alt="Album" />
+                    </figure>
+                    <div className="card-body p-0">
+                        <h2 className=" text-4xl font-script text-blue-400">{displayName}</h2>
+                        <h2 className="font-normal text-xl text-gray-400">{email}</h2>
+                    </div>
+                </div>
 
+                {/* Share Story Form */}
+                <div className="card border p-6 col-span-2">
                     <TitleH3 title="Share Your Story"></TitleH3>
                     <form onSubmit={handleSubmit} className="">
                         <div className="grid grid-cols-2 gap-4">
@@ -99,7 +199,7 @@ const TouristDashboard = () => {
                             <label className="label">
                                 <span className="label-text">Your Story</span>
                             </label>
-                            <textarea name="story" rows="4" placeholder="Your Story With Tourist Guide" className="textarea textarea-bordered textarea-sm w-full min-h-full" required></textarea>
+                            <textarea name="story" rows="6" placeholder="Your Story With Tourist Guide" className="textarea textarea-bordered textarea-sm w-full min-h-full" required></textarea>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-info">Share</button>
@@ -107,7 +207,6 @@ const TouristDashboard = () => {
                     </form>
                 </div>
             </div>
-
 
             {/* Bookings Table */}
             <div className="card border p-6">
@@ -120,10 +219,10 @@ const TouristDashboard = () => {
                         <thead>
                             <tr className="text-center">
                                 <th></th>
-                                <th>Package Name</th>
+                                <th className="text-left">Package Name</th>
                                 <th>Tour Guide Name</th>
                                 <th>Pickup Date</th>
-                                <th>Price</th>
+                                <th className="text-right">Price</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -134,15 +233,16 @@ const TouristDashboard = () => {
                                 myBookings && myBookings?.map((booking, index) => (
                                     <tr key={index} className="text-center">
                                         <th>{index + 1}</th>
-                                        <td>{booking?.tourName}</td>
+                                        <td className="text-left">{booking?.tourName}</td>
                                         <td>{booking?.guideName}</td>
                                         <td>{booking?.date}</td>
-                                        <td>${booking?.price}</td>
+                                        <td className="text-right">${booking?.price}</td>
                                         <td><div className={`badge ${getStatusBadgeColor(booking?.status)}`}>{booking?.status}</div></td>
-                                        <td className="space-x-4"><button className="btn btn-info">Pay</button>
-                                            <button className="btn btn-error">Cancel</button>
-                                            <button className="btn btn-success">Apply</button></td>
-
+                                        <td className="space-x-4">
+                                            <button onClick={handlePay} className="btn btn-info" disabled={!(booking?.status === "Accepted")}>Pay</button>
+                                            <button onClick={() => handleBookingCancel(booking?._id)} className="btn btn-error" disabled={(booking?.state === "In Review")}>Cancel</button>
+                                            <button onClick={() => handleApplyCoupon(booking?._id, booking?.price)} className="btn btn-success" disabled={!(coupon === "applicable" && booking?.state === "Accepted")}>Apply</button>
+                                        </td>
                                     </tr>
                                 ))
                             }
@@ -164,9 +264,9 @@ const TouristDashboard = () => {
                             <tr className="text-center">
                                 <th></th>
                                 <th>Thumbnail</th>
-                                <th>Package Name</th>
+                                <th className="text-left">Package Name</th>
                                 <th>Tour Type</th>
-                                <th>Price</th>
+                                <th className="text-right">Price</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -183,10 +283,10 @@ const TouristDashboard = () => {
                                                 </div>
                                             </div>
                                         </td>
-                                        <td>{item?.tripTitle}</td>
+                                        <td className="text-left">{item?.tripTitle}</td>
                                         <td><div className={`badge ${getTourTypeBadgeColor(item?.tourType)}`}>{item?.tourType}</div></td>
                                         {/* <td>{item?.tourType}</td> */}
-                                        <td>${item?.price}</td>
+                                        <td className="text-right">${item?.price}</td>
                                         <td className="space-x-4">
                                             <Link to={`/tours/${item?._id}`} className="btn btn-info">Visit Details</Link>
                                             <button onClick={() => handleDeleteFromWishlist(item?._id)} className="btn btn-error">Delete</button>

@@ -79,47 +79,49 @@ const BookingForm = ({ guides, tour, setShowConfetti }) => {
                     console.log(bookingTour);
 
                     // Post booking to server
-                    axiosPublic.post("/bookings", bookingTour)
+                    axiosSecure.post("/bookings", bookingTour)
                         .then((res) => {
-                            console.log(res.data);
+                            console.log(res.data._id);
                             // toast.success("Package Booked Successfully.");
                             // Swal.fire({
                             //     title: "Booked!",
                             //     text: "Package Booked Successfully.",
                             //     icon: "success"
                             // });
-                            axiosSecure.post('/tourists/bookings', { email: user.email, tourId: tour._id })
-                                .then(res => {
-                                    console.log(res.data);
-                                    toast.success("Package Booked Successfully.");
+                            if (res.data._id) {
+                                axiosSecure.post('/tourists/bookings', { email: user.email, bookingId: res.data._id })
+                                    .then(res => {
+                                        console.log(res.data);
+                                        toast.success("Package Booked Successfully.");
 
-                                    if (res.data.bookings.length > 3) {
-                                        setShowConfetti(true);
+                                        if (res.data.bookings.length === 4) {
+                                            setShowConfetti(true);
 
-                                        Swal.fire({
-                                            title: "Congratulations!",
-                                            text: "You have booked more than 3 packages. You have won a discount coupon.",
-                                            icon: "success",
-                                            confirmButtonText: "Claim Coupon"
+                                            Swal.fire({
+                                                title: "Congratulations!",
+                                                text: "You have booked more than 3 packages. You have won a discount coupon.",
+                                                icon: "success",
+                                                confirmButtonText: "Claim Coupon"
 
-                                        }).then((result) => {
-                                            if (result.isConfirmed) {
-                                                // navigate('/dashboard');
-                                                form.reset();
-                                                setShowConfetti(false);
-                                                // navigate('/dashboard');
-                                                axiosSecure.post('/tourists/coupon', { email: user.email, coupon: "applicable" })
-                                                    .then(res => {
-                                                        console.log(res.data);
-                                                        toast.success("Coupon Claimed Successfully.");
-                                                        navigate('/dashboard');
-                                                    })
-                                                    .catch(err => failed(err));
-                                            }
-                                        })
-                                    }
-                                })
-                                .catch(err => failed(err));
+                                            }).then((result) => {
+                                                if (result.isConfirmed) {
+                                                    // navigate('/dashboard');
+                                                    form.reset();
+                                                    setShowConfetti(false);
+                                                    // navigate('/dashboard');
+                                                    axiosSecure.post('/tourists/coupon', { email: user.email, coupon: "applicable" })
+                                                        .then(res => {
+                                                            console.log(res.data);
+                                                            toast.success("Coupon Claimed Successfully.");
+                                                            navigate('/dashboard');
+                                                        })
+                                                        .catch(err => failed(err));
+                                                }
+                                            })
+                                        }
+                                    })
+                                    .catch(err => failed(err));
+                            }
 
 
                         }).catch((error) => {
