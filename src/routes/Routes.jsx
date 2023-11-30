@@ -26,14 +26,16 @@ import GuideDashboardBooking from "../pages/GuideDashboardBooking";
 import AdminDashboardProfile from "../pages/AdminDashboardProfile";
 import AdminDashboardHome from "../pages/AdminDashboardHome";
 import AdminDashboardAddPackage from "../pages/AdminDashboardAddPackage";
+import ErrorPage from "../pages/ErrorPage";
 
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
-            { path: "/", element: <Home></Home>, errorElement: <ErrorPage></ErrorPage>, },
+            { path: "/", element: <Home></Home> },
             { path: "/about", element: <h1>About</h1> },
             { path: "/contact", element: <h1>Contact</h1> },
             { path: '/tours', element: <Tours></Tours> },
