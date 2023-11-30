@@ -11,7 +11,7 @@ const useLoadData = (url, key) => {
             return res.data
         }
     })
-    return [data, isPending, error, refetch];
+    return [data, isPending, refetch, error];
 };
 
 export default useLoadData;

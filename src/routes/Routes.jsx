@@ -10,10 +10,22 @@ import Login from "../components/forms/Login";
 import SignUp from "../components/forms/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import ToursOfTypes from "../pages/ToursOfTypes";
-import TouristDashboard from "../pages/TouristDashboard";
 import AllStories from "../pages/AllStories";
 import GuideDashboard from "../pages/GuideDashboard";
 import Dashboard from "../pages/Dashboard";
+import GuideRoute from "./GuideRoute";
+import AdminDashboard from "../pages/AdminDashboard";
+import TouristDashboard from "../pages/TouristDashboard";
+import TouristDashboardProfile from "../pages/TouristDashboardProfile";
+import TouristDashboardBookings from "../pages/TouristDashboardBookings";
+import TouristDashboardWishlist from "../pages/TouristDashboardWishlist";
+import TouristDashboardAll from "../pages/TouristDashboardAll";
+import GuideDashboardHome from "../pages/GuideDashboardHome";
+import GuideDashboardProfile from "../pages/GuideDashboardProfile";
+import GuideDashboardBooking from "../pages/GuideDashboardBooking";
+import AdminDashboardProfile from "../pages/AdminDashboardProfile";
+import AdminDashboardHome from "../pages/AdminDashboardHome";
+import AdminDashboardAddPackage from "../pages/AdminDashboardAddPackage";
 
 
 export const router = createBrowserRouter([
@@ -21,7 +33,7 @@ export const router = createBrowserRouter([
         path: "/",
         element: <Root></Root>,
         children: [
-            { path: "/", element: <Home></Home> },
+            { path: "/", element: <Home></Home>, errorElement: <ErrorPage></ErrorPage>, },
             { path: "/about", element: <h1>About</h1> },
             { path: "/contact", element: <h1>Contact</h1> },
             { path: '/tours', element: <Tours></Tours> },
@@ -35,9 +47,32 @@ export const router = createBrowserRouter([
             {
                 path: "/dashboard", element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
                 children: [
-                    { path: "touristDashboard", element: <TouristDashboard></TouristDashboard> },
-                    { path: "guideDashboard", element: <GuideDashboard></GuideDashboard> },
-                    { path: "adminDashboard", element: <h1>Admin Dashboard</h1> }
+                    {
+                        path: "tourist", element: <TouristDashboard></TouristDashboard>,
+                        // path: 'tourist', element: <TouristDashboardProfile></TouristDashboardProfile>,
+                        children: [
+                            // { path: "", element: <TouristDashboardAll></TouristDashboardAll> },
+                            { path: "", element: <TouristDashboardProfile></TouristDashboardProfile> },
+                            { path: "bookings", element: <TouristDashboardBookings></TouristDashboardBookings> },
+                            { path: 'wishlist', element: <TouristDashboardWishlist></TouristDashboardWishlist> }
+
+                        ]
+                    },
+                    {
+                        path: "guide", element: <GuideRoute><GuideDashboardHome></GuideDashboardHome></GuideRoute>,
+                        children: [
+                            { path: "", element: <GuideDashboardProfile></GuideDashboardProfile> },
+                            { path: "myBookings", element: <GuideDashboardBooking></GuideDashboardBooking> },
+                        ]
+                    },
+                    {
+                        path: "admin", element: <AdminDashboardHome></AdminDashboardHome>,
+                        children: [
+                            { path: "", element: <AdminDashboardProfile></AdminDashboardProfile> },
+                            { path: "addPackage", element: <AdminDashboardAddPackage></AdminDashboardAddPackage> },
+                            { path: "manage", element: <AdminDashboard></AdminDashboard> }
+                        ]
+                    }
                 ]
             },
 

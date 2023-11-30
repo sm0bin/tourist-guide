@@ -77,18 +77,21 @@ const Header = () => {
                             <ul className="py-2">
                                 <li>
                                     {
-                                        role === "guide" && <NavLink to='/dashboard/guideDashboard'>Dashboard</NavLink>
+                                        role === "tourist" && <NavLink to='/dashboard/tourist'>Dashboard</NavLink>
                                     }
                                     {
-                                        role === "tourist" && <NavLink to='/dashboard/touristDashboard'>Dashboard</NavLink>
+                                        role === "guide" && <NavLink to='/dashboard/guide'>Dashboard</NavLink>
+                                    }
+                                    {
+                                        role === "admin" && <NavLink to='/dashboard/admin'>Dashboard</NavLink>
                                     }
                                 </li>
-                                <li>
+                                {/* <li>
                                     <a>Settings</a>
                                 </li>
                                 <li>
                                     <a>Earnings</a>
-                                </li>
+                                </li> */}
                                 <li>
                                     <button onClick={handleSignOut} className="">Logout</button>
                                 </li>

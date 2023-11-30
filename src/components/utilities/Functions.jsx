@@ -24,6 +24,19 @@ const getStatusBadgeColor = (status) => {
     }
 }
 
+const getRoleBadgeColor = (role) => {
+    switch (role) {
+        case "admin":
+            return "badge-warning";
+        case "guide":
+            return "badge-info";
+        case "tourist":
+            return "badge-success";
+        default:
+            return "";
+    }
+}
+
 const getTourTypeBadgeColor = (tourType) => {
     let badgeColor = '';
 
@@ -54,4 +67,4 @@ const getTourTypeBadgeColor = (tourType) => {
 };
 
 
-export { failed, getStatusBadgeColor, getTourTypeBadgeColor };
+export { failed, getStatusBadgeColor, getTourTypeBadgeColor, getRoleBadgeColor };

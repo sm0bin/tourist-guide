@@ -5,31 +5,42 @@ import GuideProfile from "../components/shared/GuideProfile";
 import TitleH3 from "../components/utilities/TitleH3";
 import useLoadDataSecure from "../hooks/useLoadDataSecure";
 import { failed, getStatusBadgeColor } from "../components/utilities/Functions";
-import { useState } from "react";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import { toast } from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const GuideDashboard = () => {
     const { user } = useAuth();
     const axiosSecure = useAxiosSecure();
     const [guide, isPending, refetch] = useLoadData(`/guides/guide/${user.email}`, "guide");
     const [myBookings, isPendingMyBookings, refetchMyBookings] = useLoadDataSecure(`/guides/bookings/${user.email}`, "bookings");
-    const [btnState, setBtnState] = useState(false);
 
     if (isPending) return <div className="w-screen h-screen flex items-center justify-center">
         <span className="loading loading-ball loading-lg"></span>
     </div>
 
     const handleStatusChange = (id, status) => {
-        axiosSecure.put(`/bookings/status/${id}`, { status: status })
-            .then(res => {
-                console.log(res.data);
-                // setBtnState(true);
-                refetchMyBookings();
-                toast.success("Status Changed.");
-            }).catch(err => {
-                failed(err);
-            });
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Confirm"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axiosSecure.put(`/bookings/status/${id}`, { status: status })
+                    .then(res => {
+                        console.log(res.data);
+                        // setBtnState(true);
+                        refetchMyBookings();
+                        toast.success("Status Changed.");
+                    }).catch(err => {
+                        failed(err);
+                    });
+            }
+        });
     }
 
 
@@ -41,58 +52,58 @@ const GuideDashboard = () => {
             <div className="grid gap-6 my-32">
                 {/* Guides Profile */}
                 {
-                    guide ? <GuideProfile guide={guide}></GuideProfile> :
-                        <GuideProfileForm refetch={refetch}></GuideProfileForm>
+                    guide ?
+
+                        <>
+                            <GuideProfile guide={guide}></GuideProfile>
+
+                            {/* Bookings Table */}
+                            <div className="card border p-6">
+                                <TitleH3 title="My Assigned Tours"></TitleH3>
+                                <div className="divider"></div>
+
+                                <div className="overflow-x-auto">
+                                    <table className="table table-zebra">
+                                        {/* head */}
+                                        <thead>
+                                            <tr className="text-center">
+                                                <th></th>
+                                                <th className="text-left">Package Name</th>
+                                                <th>Tourist Name</th>
+                                                <th>Pickup Date</th>
+                                                <th className="text-right">Price</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            {
+                                                myBookings && myBookings?.map((booking, index) => (
+                                                    <tr key={index} className="text-center">
+                                                        <th>{index + 1}</th>
+                                                        <td className="text-left">{booking?.tourName}</td>
+                                                        <td>{booking?.touristName}</td>
+                                                        <td>{booking?.date}</td>
+                                                        <td className="text-right">${booking?.price}</td>
+                                                        <td>
+                                                            <div className={`badge ${getStatusBadgeColor(booking?.status)}`}>{booking?.status}</div>
+                                                        </td>
+                                                        <td className="space-x-4">
+                                                            <button onClick={() => handleStatusChange(booking?._id, "Accepted")} className="btn btn-info" disabled={!(booking?.status === "In Review")}>Accept</button>
+                                                            <button onClick={() => handleStatusChange(booking?._id, "Rejected")} className="btn btn-error" disabled={!(booking?.status === "In Review")}>Reject</button>
+                                                        </td>
+                                                    </tr>
+                                                ))
+                                            }
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </>
+                        : <GuideProfileForm refetch={refetch}></GuideProfileForm>
                 }
-
-                {/* Bookings Table */}
-                <div className="card border p-6">
-                    <TitleH3 title="My Bookings"></TitleH3>
-                    <div className="divider"></div>
-
-                    <div className="overflow-x-auto">
-                        <table className="table table-zebra">
-                            {/* head */}
-                            <thead>
-                                <tr className="text-center">
-                                    <th></th>
-                                    <th className="text-left">Package Name</th>
-                                    <th>Tourist Name</th>
-                                    <th>Pickup Date</th>
-                                    <th className="text-right">Price</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                {
-                                    myBookings && myBookings?.map((booking, index) => (
-                                        <tr key={index} className="text-center">
-                                            <th>{index + 1}</th>
-                                            <td className="text-left">{booking?.tourName}</td>
-                                            <td>{booking?.touristName}</td>
-                                            <td>{booking?.date}</td>
-                                            <td className="text-right">${booking?.price}</td>
-                                            <td>
-                                                <div className={`badge ${getStatusBadgeColor(booking?.status)}`}>{booking?.status}</div>
-                                                {/* <select className="select select-bordered select-sm w-full max-w-xs">
-                                                    <option selected>{booking?.status}</option>
-                                                    <option>Small Apple</option>
-                                                </select> */}
-                                            </td>
-                                            <td className="space-x-4">
-                                                <button onClick={() => handleStatusChange(booking?._id, "Accepted")} className="btn btn-info" disabled={!(booking?.status === "In Review")}>Accept</button>
-                                                <button onClick={() => handleStatusChange(booking?._id, "Rejected")} className="btn btn-error" disabled={!(booking?.status === "In Review")}>Reject</button>
-                                            </td>
-                                        </tr>
-                                    ))
-                                }
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
 
             </div>
 
