@@ -3,7 +3,6 @@ import TitleH3 from "../components/utilities/TitleH3";
 import useAuth from "../hooks/useAuth";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import { failed, getTourTypeBadgeColor, getStatusBadgeColor } from "../components/utilities/Functions";
-import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useLoadDataSecure from "../hooks/useLoadDataSecure";
@@ -14,44 +13,15 @@ const TouristDashboard = () => {
     // if (!user) return null;
     const { displayName, email, photoURL } = user;
     const axiosSecure = useAxiosSecure();
-    const [isPendingMyBookings, errorMyBookings, myBookings, refetchMyBookings] = useLoadDataSecure(`/bookings/${email}`, "bookings");
-    const [isPendingMyWishlist, errorMyWishlist, myWishlist, refetchMyWishlist] = useLoadDataSecure(`/tourists/wishlist/${email}`, "wishlist");
-    const [isPendingCoupon, errorCoupon, coupon, refetchCoupon] = useLoadDataSecure(`/tourists/coupon/${email}`, "coupon");
+    const [myBookings, isPendingMyBookings, refetchMyBookings] = useLoadDataSecure(`/bookings/${email}`, "bookings");
+    const [myWishlist, isPendingMyWishlist, refetchMyWishlist] = useLoadDataSecure(`/tourists/wishlist/${email}`, "wishlist");
+    const [coupon, isPendingCoupon, refetchCoupon] = useLoadDataSecure(`/tourists/coupon/${email}`, "coupon");
 
-    // const { isPending: isPendingMyBookings, error, data: myBookings, refetch: refetchMyBookings } = useQuery({
-    //     queryKey: ["bookings"],
-    //     queryFn: async () => {
-    //         const res = await axiosSecure(`/bookings/${user.email}`)
-    //         return res.data
-    //     }
-    // })
-
-    // const { isPending: isPendingMyWishlist, error: errorMyWishlist, data: myWishlist, refetch: refetchMyWishlist } = useQuery({
-    //     queryKey: ["wishlist"],
-    //     queryFn: async () => {
-    //         const res = await axiosSecure(`/tourists/wishlist/${user.email}`)
-    //         return res.data
-    //     }
-    // })
-
-    // const { isPending: isPendingCoupon, error: errorCoupon, data: coupon, refetch: refetchCoupon } = useQuery({
-    //     queryKey: ["coupon"],
-    //     queryFn: async () => {
-    //         const res = await axiosSecure(`/tourists/coupon/${user.email}`)
-    //         return res.data
-    //     }
-    // })
-
-    // console.log(coupon);
 
     if (isPendingMyBookings || isPendingMyWishlist) return <div className="w-full h-screen flex items-center justify-center">
         <span className="loading loading-ball loading-lg"></span>
     </div>
 
-    // axiosSecure.get("/bookings/user", { email: email })
-    //     .then(res => {
-    //         console.log(res.data);
-    //     }).catch(err => failed(err));
 
 
     const handleSubmit = (e) => {
@@ -106,11 +76,6 @@ const TouristDashboard = () => {
             cancelButtonText: "No, Don't Cancel"
         }).then((result) => {
             if (result.isConfirmed) {
-
-                // axiosSecure.delete(`/bookings/${id}`)
-                //     .then(res => {
-                //         console.log(res);
-                //     }).catch(error => failed(error));
 
                 axiosSecure.post(`/tourists/bookings/${id}`, { email: user.email })
                     .then(res => {

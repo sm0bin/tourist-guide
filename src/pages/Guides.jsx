@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Guides = () => {
 
-    const [isPending, error, guides] = useLoadData('/guides', "guides");
+    const [guides, isPending] = useLoadData('/guides', "guides");
 
     if (isPending) return <div className="w-full h-screen flex items-center justify-center">
         <span className="loading loading-ball loading-lg"></span>

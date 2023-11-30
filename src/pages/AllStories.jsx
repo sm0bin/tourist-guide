@@ -1,11 +1,10 @@
 import SectionTitle from "../components/utilities/SectionTitle";
 import { Helmet } from "react-helmet-async";
 import useLoadData from "../hooks/useLoadData";
-import TourCard from "../components/shared/TourCard";
 import { FaStar } from "react-icons/fa";
 
 const AllStories = () => {
-    const [isPending, error, stories] = useLoadData('/stories', "stories");
+    const [stories, isPending] = useLoadData('/stories', "stories");
 
     if (isPending) return <div className="w-full h-screen flex items-center justify-center">
         <span className="loading loading-ball loading-lg"></span>

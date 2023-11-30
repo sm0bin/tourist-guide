@@ -4,7 +4,7 @@ import useLoadData from "../hooks/useLoadData";
 import TourCard from "../components/shared/TourCard";
 
 const Tours = () => {
-    const [isPending, error, tours] = useLoadData('/tours', "tours");
+    const [tours, isPending] = useLoadData('/tours', "tours");
 
     if (isPending) return <div className="w-full h-screen flex items-center justify-center">
         <span className="loading loading-ball loading-lg"></span>

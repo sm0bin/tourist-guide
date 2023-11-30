@@ -7,7 +7,7 @@ import SectionTitle from '../utilities/SectionTitle';
 import { Link } from 'react-router-dom';
 
 const TourTypes = () => {
-    const [isPending, error, tourTypes] = useLoadData('/types', "tourTypes");
+    const [tourTypes, isPending] = useLoadData('/types', "tourTypes");
 
     if (isPending) return <div className="w-full h-screen flex items-center justify-center">
         <span className="loading loading-ball loading-lg"></span>

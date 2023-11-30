@@ -5,7 +5,7 @@ import TitleH3 from "../components/utilities/TitleH3";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { FaArrowRight, FaCalendarWeek, FaHotel } from "react-icons/fa";
-import BookingForm from "../components/auth/BookingForm";
+import BookingForm from "../components/forms/BookingForm";
 import GuideCard from "../components/shared/GuideCard";
 import Confetti from 'react-confetti';
 import useWindowSize from 'react-use/lib/useWindowSize'
@@ -13,8 +13,8 @@ import { useState } from "react";
 
 const Tour = () => {
     const { id } = useParams();
-    const [isPending, error, tour] = useLoadData(`/tours/${id}`, "tour");
-    const [guidesPending, guidesError, guides] = useLoadData('/guides', "guides");
+    const [tour, isPending] = useLoadData(`/tours/${id}`, "tour");
+    const [guides, guidesPending] = useLoadData('/guides', "guides");
     const { width, height } = useWindowSize();
     const [showConfetti, setShowConfetti] = useState(false);
 

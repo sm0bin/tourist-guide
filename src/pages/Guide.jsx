@@ -4,7 +4,7 @@ import { FaEnvelope, FaMapMarkerAlt, FaPhone, FaStar } from "react-icons/fa";
 
 const Guide = () => {
     const params = useParams();
-    const [isPending, error, guide] = useLoadData(`/guides/${params.id}`, "guide");
+    const [guide, isPending] = useLoadData(`/guides/${params.id}`, "guide");
 
     if (isPending) return <div className="w-screen h-screen flex items-center justify-center">
         <span className="loading loading-ball loading-lg"></span>

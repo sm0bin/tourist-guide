@@ -9,6 +9,7 @@ import { failed } from "../utilities/Functions";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import TitleH3Center from "../utilities/TitleH3Center";
 
 
 const imgHostingApi = import.meta.env.VITE_IMG_HOSTING_API;
@@ -93,6 +94,7 @@ const BookingForm = ({ guides, tour, setShowConfetti }) => {
                                     .then(res => {
                                         console.log(res.data);
                                         toast.success("Package Booked Successfully.");
+                                        form.reset();
 
                                         if (res.data.bookings.length === 4) {
                                             setShowConfetti(true);
@@ -139,7 +141,7 @@ const BookingForm = ({ guides, tour, setShowConfetti }) => {
     return (
         <div className="card shrink-0 w-full max-w-lg h-max shadow bg-base-100 p-6 pt-0">
 
-            <h3 className="text-center font-script text-3xl text-blue-400">Book Now</h3>
+            <TitleH3Center title="Book Now"></TitleH3Center>
             <form onSubmit={handleSubmit} className="card-body p-0">
                 <div className="form-control">
                     <label className="label">
@@ -159,21 +161,11 @@ const BookingForm = ({ guides, tour, setShowConfetti }) => {
                     </label>
                     <input type="file" name="image" className="file-input file-input-info" accept=".jpg, .jpeg, .png, .gif" required />
                 </div>
-                {/* <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Discount Coupon</span>
-                    </label>
-                    <div className="join w-full">
-                        <input className="input input-bordered join-item w-full" placeholder="Coupon" />
-                        <button className="btn btn-info join-item">Apply Coupon</button>
-                    </div>
-                </div> */}
 
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Pickup Date</span>
                     </label>
-                    {/* <input type="email" name="email" placeholder="email" className="input input-bordered" required /> */}
                     <DatePicker
                         className="input input-bordered w-full text-gray-500"
                         selected={startDate}

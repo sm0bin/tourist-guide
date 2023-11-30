@@ -5,6 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useState } from "react";
 import { failed } from "../utilities/Functions";
+import TitleH3Center from "../utilities/TitleH3Center";
 
 const imgHostingApi = import.meta.env.VITE_IMG_HOSTING_API;
 
@@ -122,7 +123,9 @@ const SignUp = () => {
         <div className="card shrink-0 w-full max-w-lg shadow bg-base-100 p-6">
             <button onClick={handleGoogleSignIn} className="btn"><FcGoogle className="text-xl" />Continue With Google</button>
             <div className="divider">Or</div>
-            <h3 className="text-center font-script text-3xl text-blue-400">Sign Up Now</h3>
+
+            {/* <h3 className="text-center font-script text-3xl text-blue-400">Sign Up Now</h3> */}
+            <TitleH3Center title="Sign Up Now"></TitleH3Center>
             <form onSubmit={handleSubmit} className="card-body p-0">
                 <div className="form-control">
                     <label className="label">

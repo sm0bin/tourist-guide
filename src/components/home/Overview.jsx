@@ -8,8 +8,8 @@ import TourCard from '../shared/TourCard';
 
 const Overview = () => {
 
-    const [guidesPending, guidesError, guides] = useLoadData('/guides', "guides");
-    const [toursPending, toursError, tours] = useLoadData('/tours', "tours");
+    const [guides, guidesPending] = useLoadData('/guides', "guides");
+    const [tours, toursPending] = useLoadData('/tours', "tours");
 
     if (guidesPending || toursPending) return <div className="w-full h-screen flex items-center justify-center">
         <span className="loading loading-ball loading-lg"></span>

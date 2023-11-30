@@ -13,7 +13,7 @@ import GoToBtn from '../utilities/GoToBtn';
 
 
 const Stories = () => {
-    const [isPending, error, stories] = useLoadData('/stories', "stories");
+    const [stories, isPending] = useLoadData('/stories', "stories");
 
     if (isPending) return <div className="w-full h-screen flex items-center justify-center">
         <span className="loading loading-ball loading-lg"></span>

@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { useState } from "react";
 import { failed } from "../utilities/Functions";
+import TitleH3Center from "../utilities/TitleH3Center";
 
 
 const Login = () => {
@@ -53,7 +54,8 @@ const Login = () => {
         <div className="card shrink-0 w-full max-w-lg shadow bg-base-100 p-6">
             <button onClick={handleGoogleSignIn} className="btn"><FcGoogle className="text-xl" />Continue With Google</button>
             <div className="divider">Or</div>
-            <h3 className="text-center font-script text-3xl text-blue-400">Login Now</h3>
+            {/* <h3 className="text-center font-script text-3xl text-blue-400">Login Now</h3> */}
+            <TitleH3Center title="Login Now"></TitleH3Center>
             <form onSubmit={handleSubmit} className="card-body p-0">
                 <div className="form-control">
                     <label className="label">

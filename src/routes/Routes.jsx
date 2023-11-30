@@ -6,12 +6,14 @@ import Guide from "../pages/Guide";
 import Tours from "../pages/Tours";
 import Tour from "../pages/Tour";
 import Auth from "../pages/Auth";
-import Login from "../components/auth/Login";
-import SignUp from "../components/auth/SignUp";
+import Login from "../components/forms/Login";
+import SignUp from "../components/forms/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import ToursOfTypes from "../pages/ToursOfTypes";
 import TouristDashboard from "../pages/TouristDashboard";
 import AllStories from "../pages/AllStories";
+import GuideDashboard from "../pages/GuideDashboard";
+import Dashboard from "../pages/Dashboard";
 
 
 export const router = createBrowserRouter([
@@ -30,7 +32,14 @@ export const router = createBrowserRouter([
             { path: "/stories", element: <AllStories></AllStories> },
             { path: "/community", element: <h1>Community</h1> },
             { path: "/blogs", element: <h1>Blogs</h1> },
-            { path: "/dashboard", element: <PrivateRoute><TouristDashboard></TouristDashboard></PrivateRoute> },
+            {
+                path: "/dashboard", element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+                children: [
+                    { path: "touristDashboard", element: <TouristDashboard></TouristDashboard> },
+                    { path: "guideDashboard", element: <GuideDashboard></GuideDashboard> },
+                    { path: "adminDashboard", element: <h1>Admin Dashboard</h1> }
+                ]
+            },
 
             {
                 path: "/auth",

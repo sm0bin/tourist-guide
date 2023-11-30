@@ -1,21 +1,15 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useContext } from "react";
 import { toast } from "react-hot-toast";
 import { FaRegUserCircle } from "react-icons/fa";
+import useRole from "../../hooks/useRole";
 
 const Header = () => {
-    // const navLinks = [
-    //     { label: 'HOME', path: '/' },
-    //     { label: 'CONTACT US', path: '/contact' },
-    //     { label: 'DASHBOARD', path: '/dashboard' },
-    //     { label: 'OUR MENU', path: '/menu' },
-    //     { label: 'OUR SHOP', path: '/shop' },
-    //     { label: 'SIGN OUT', path: '/signout' },
-    // ];
     const { user, logout } = useContext(AuthContext);
+    const [role] = useRole();
+    console.log(role);
 
-    // const { displayName, email, photoURL } = user || null;
 
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
@@ -26,11 +20,6 @@ const Header = () => {
         <li><NavLink to="/about">About Us</NavLink></li>
         <li><NavLink to="/contact">Contact Us</NavLink></li>
         <li><NavLink to="/community">Community</NavLink></li>
-        {/* {
-            user ?
-                <li><NavLink to="/signout">Sign Out</NavLink></li> :
-                <li><NavLink to="/auth">Sign In</NavLink></li>
-        } */}
     </>
 
     const handleSignOut = () => {
@@ -42,9 +31,6 @@ const Header = () => {
             });
 
     }
-
-
-
     return (
 
 
@@ -90,7 +76,12 @@ const Header = () => {
                             </div>
                             <ul className="py-2">
                                 <li>
-                                    <NavLink to="/dashboard">Dashboard</NavLink>
+                                    {
+                                        role === "guide" && <NavLink to='/dashboard/guideDashboard'>Dashboard</NavLink>
+                                    }
+                                    {
+                                        role === "tourist" && <NavLink to='/dashboard/touristDashboard'>Dashboard</NavLink>
+                                    }
                                 </li>
                                 <li>
                                     <a>Settings</a>
@@ -104,11 +95,7 @@ const Header = () => {
                             </ul>
                         </div>
                     </div>
-                    // <button onClick={handleSignOut} className="btn btn-warning">Sign Out</button> 
                     : <NavLink to="/auth/login" className="btn btn-info">Login</NavLink>
-
-
-
                 }
             </div>
         </div>
