@@ -80,6 +80,23 @@ The Tourist Guide site is an online platform providing comprehensive information
   - Shows a table of users with their roles (User, Tourist, Admin).
   - Admins can make users either an Admin or a Tour Guide, disabling the opposite role.
 
+## Technology
+
+### Frontend
+
+[![My Skills](https://skillicons.dev/icons?i=react,tailwind)](https://skillicons.dev)
+
+### Backend
+
+[![My Skills](https://skillicons.dev/icons?i=nodejs,express,mongodb)](https://skillicons.dev)
+<img src="./public/mongoose.svg" width="64">
+
+<!-- ![Tux, the Linux mascot](./public/mongoose.svg?style=flat-square) -->
+
+### Authentication
+
+[![My Skills](https://skillicons.dev/icons?i=firebase)](https://skillicons.dev)
+
 **Admin Credentials:**
 
 - Email: test1@email.com
