@@ -54,7 +54,7 @@ export const router = createBrowserRouter([
                 children: [
                     { path: "tourist", element: <TouristDashboardProfile></TouristDashboardProfile> },
                     { path: "bookings", element: <TouristDashboardBookings></TouristDashboardBookings> },
-                    { path: 'wishlist', element: <TouristDashboardWishlist></TouristDashboardWishlist> },
+                    { path: "wishlist", element: <TouristDashboardWishlist></TouristDashboardWishlist> },
 
                     // { path: "guide", element: <GuideRoute><GuideDashboardHome></GuideDashboardHome></GuideRoute> },
                     { path: "guide", element: <GuideDashboardProfile></GuideDashboardProfile> },

@@ -62,11 +62,11 @@ const TouristDashboardProfile = () => {
                                 <input name="designation" type="text" placeholder="Your Designation" className="input input-bordered" required />
                             </div>
                         </div>
-                        <div className="form-control">
+                        <div className="form-control grow">
                             <label className="label">
                                 <span className="label-text">Your Story</span>
                             </label>
-                            <textarea name="story" rows="6" placeholder="Your Story With Tourist Guide" className="textarea textarea-bordered textarea-sm w-full min-h-full" required></textarea>
+                            <textarea name="story" rows="13" placeholder="Your Story With Tourist Guide" className="textarea textarea-bordered textarea-sm w-full h-full grow" required></textarea>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-info">Share</button>

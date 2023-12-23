@@ -1,6 +1,4 @@
-import TouristProfile from "../../shared/TouristProfile";
 import { failed, getRoleBadgeColor } from "../../utilities/Functions";
-import useAuth from "../../../hooks/useAuth";
 import useLoadData from "../../../hooks/useLoadData";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { toast } from "react-hot-toast";
@@ -40,9 +38,8 @@ const AdminDashboard = () => {
 
 
     return (
-        <div className=" mx-4 md:mx-8 lg:mx-auto max-w-7xl my-32">
 
-
+        <div className="">
 
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
@@ -69,8 +66,6 @@ const AdminDashboard = () => {
                                     <td className="space-x-4">
                                         <button onClick={() => handleTouristRoleChange(tourist?._id, "admin")} className="btn btn-warning" disabled={(tourist?.role === "admin")}>Make Admin</button>
                                         <button onClick={() => handleTouristRoleChange(tourist?._id, "guide")} className="btn btn-info" disabled={!(tourist?.role === "tourist")}>Make Tour Guide</button>
-
-
                                     </td>
                                 </tr>
 

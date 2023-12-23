@@ -120,8 +120,7 @@ const AdminDashboardAddPackage = () => {
                             <label className="label">
                                 <span className="label-text">Description</span>
                             </label>
-                            <textarea name="description" placeholder="" className="textarea textarea-bordered textarea-md w-full" required></textarea>
-                            {/* <input type="text" name="description" placeholder="" className="input input-bordered" required /> */}
+                            <textarea rows={7} name="description" placeholder="" className="textarea textarea-bordered textarea-md w-full" required></textarea>
                         </div>
                     </div>
 
