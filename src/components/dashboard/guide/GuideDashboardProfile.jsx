@@ -1,6 +1,6 @@
-import GuideProfile from "../components/shared/GuideProfile";
-import useAuth from "../hooks/useAuth";
-import useLoadData from "../hooks/useLoadData";
+import useAuth from "../../../hooks/useAuth";
+import GuideProfile from "../../shared/GuideProfile";
+import useLoadData from "../../../hooks/useLoadData";
 
 const GuideDashboardProfile = () => {
     const { user } = useAuth();

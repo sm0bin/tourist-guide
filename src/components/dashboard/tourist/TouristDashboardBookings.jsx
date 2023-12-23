@@ -1,12 +1,10 @@
 import { toast } from "react-hot-toast";
-import TitleH3 from "../components/utilities/TitleH3";
-import useAuth from "../hooks/useAuth";
-import useAxiosSecure from "../hooks/useAxiosSecure";
-import { failed, getTourTypeBadgeColor, getStatusBadgeColor } from "../components/utilities/Functions";
-import { Link, Outlet } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { failed, getStatusBadgeColor } from "../../../components/utilities/Functions";
 import Swal from "sweetalert2";
-import useLoadDataSecure from "../hooks/useLoadDataSecure";
-import TouristProfile from "../components/shared/TouristProfile";
+import useLoadDataSecure from "../../../hooks/useLoadDataSecure";
+import TitleH3 from "../../utilities/TitleH3";
 
 const TouristDashboardBookings = () => {
     const { user } = useAuth();

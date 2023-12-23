@@ -1,7 +1,7 @@
-import TitleH3Center from "../components/utilities/TitleH3Center";
-import useAxiosSecure from "../hooks/useAxiosSecure";
-import { failed } from "../components/utilities/Functions";
 import { toast } from "react-hot-toast";
+import TitleH3Center from "../../utilities/TitleH3Center";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { failed } from "../../utilities/Functions";
 
 const AdminDashboardAddPackage = () => {
     const axiosSecure = useAxiosSecure();

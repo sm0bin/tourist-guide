@@ -1,8 +1,8 @@
-import TouristProfile from "../components/shared/TouristProfile";
-import { failed, getRoleBadgeColor } from "../components/utilities/Functions";
-import useAuth from "../hooks/useAuth";
-import useLoadData from "../hooks/useLoadData";
-import useAxiosSecure from "../hooks/useAxiosSecure";
+import TouristProfile from "../../shared/TouristProfile";
+import { failed, getRoleBadgeColor } from "../../utilities/Functions";
+import useAuth from "../../../hooks/useAuth";
+import useLoadData from "../../../hooks/useLoadData";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { toast } from "react-hot-toast";
 import Swal from "sweetalert2";
 

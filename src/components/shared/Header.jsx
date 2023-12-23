@@ -16,10 +16,10 @@ const Header = () => {
         <li><NavLink to="/tours">Tour Packages</NavLink></li>
         <li><NavLink to="/guides">Tour Guides</NavLink></li>
         <li><NavLink to="/stories">All Stories</NavLink></li>
-        <li><NavLink to="/blogs">Blogs</NavLink></li>
+        {/* <li><NavLink to="/blogs">Blogs</NavLink></li>
         <li><NavLink to="/about">About Us</NavLink></li>
         <li><NavLink to="/contact">Contact Us</NavLink></li>
-        <li><NavLink to="/community">Community</NavLink></li>
+        <li><NavLink to="/community">Community</NavLink></li> */}
     </>
 
     const handleSignOut = () => {
@@ -46,7 +46,7 @@ const Header = () => {
                 </div>
                 <NavLink to="/" className="hidden md:flex items-center gap-2">
                     <img src="/travel-logo.svg" className="w-12 h-12" alt="Tourist Guide Logo" />
-                    <h1 className=" text-4xl text-left font-bold whitespace-nowrap dark:text-white text-blue-400">Tourist <span className="text-yellow-500">Guide</span></h1>
+                    <h1 className=" text-4xl text-left font-bold whitespace-nowrap text-blue-400">Tourist <span className="text-yellow-500">Guide</span></h1>
                 </NavLink>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -71,8 +71,8 @@ const Header = () => {
 
                         <div tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 text-black rounded-box ">
                             <div className="px-4 py-3 border-b">
-                                <span className="block text-sm text-gray-900 dark:text-white">{user?.displayName || "User"}</span>
-                                <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">{user?.email}</span>
+                                <span className="block text-sm text-gray-90">{user?.displayName || "User"}</span>
+                                <span className="block text-sm  text-gray-500 truncate">{user?.email}</span>
                             </div>
                             <ul className="py-2">
                                 <li>
@@ -86,12 +86,7 @@ const Header = () => {
                                         role === "admin" && <NavLink to='/dashboard/admin'>Dashboard</NavLink>
                                     }
                                 </li>
-                                {/* <li>
-                                    <a>Settings</a>
-                                </li>
-                                <li>
-                                    <a>Earnings</a>
-                                </li> */}
+
                                 <li>
                                     <button onClick={handleSignOut} className="">Logout</button>
                                 </li>

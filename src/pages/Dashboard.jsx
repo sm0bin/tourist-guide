@@ -30,7 +30,9 @@ const Dashboard = () => {
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
                     {/* Page content here */}
-                    <Outlet></Outlet>
+                    <div className="mx-6 my-24">
+                        <Outlet></Outlet>
+                    </div>
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
                 </div>
@@ -68,8 +70,8 @@ const Dashboard = () => {
                             (role === "tourist") &&
                             <>
                                 <li><NavLink to='/dashboard/tourist'>My Profile</NavLink></li>
-                                <li><NavLink to='/dashboard/tourist/bookings'>My Bookings</NavLink></li>
-                                <li><NavLink to='/dashboard/tourist/wishlist'>My Wishlist</NavLink></li>
+                                <li><NavLink to='/dashboard/bookings'>My Bookings</NavLink></li>
+                                <li><NavLink to='/dashboard/wishlist'>My Wishlist</NavLink></li>
                             </>
                         }
 

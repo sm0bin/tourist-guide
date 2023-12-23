@@ -10,7 +10,7 @@ const Footer = () => {
 
                     <aside>
                         <img src="/travel-logo.svg" className="w-24 h-24" alt="brand logo" />
-                        <h2 className=" text-4xl font-bold dark:text-white text-blue-400">Tourist <span className="text-yellow-500">Guide</span></h2>
+                        <h2 className=" text-4xl font-bold text-blue-400">Tourist <span className="text-yellow-500">Guide</span></h2>
                         <p>Trusted Service Since 1999</p>
                     </aside>
                     <nav>

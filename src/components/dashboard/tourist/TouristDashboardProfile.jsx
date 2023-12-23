@@ -1,8 +1,8 @@
 import { toast } from 'react-hot-toast';
-import TouristProfile from '../components/shared/TouristProfile';
-import TitleH3 from '../components/utilities/TitleH3';
-import useAuth from '../hooks/useAuth';
-import useAxiosSecure from '../hooks/useAxiosSecure';
+import TouristProfile from '../../../components/shared/TouristProfile';
+import TitleH3 from '../../../components/utilities/TitleH3';
+import useAuth from '../../../hooks/useAuth';
+import useAxiosSecure from '../../../hooks/useAxiosSecure';
 
 const TouristDashboardProfile = () => {
     const { user } = useAuth();

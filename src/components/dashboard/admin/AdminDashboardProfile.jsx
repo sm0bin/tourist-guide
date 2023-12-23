@@ -1,6 +1,5 @@
-import React from 'react';
-import TouristProfile from '../components/shared/TouristProfile';
-import useAuth from '../hooks/useAuth';
+import useAuth from '../../../hooks/useAuth';
+import TouristProfile from '../../shared/TouristProfile';
 
 const AdminDashboardProfile = () => {
     const { user } = useAuth();

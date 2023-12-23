@@ -1,11 +1,11 @@
-import useLoadData from "../hooks/useLoadData";
-import useAuth from "../hooks/useAuth";
-import GuideProfileForm from "../components/forms/GuideProfileForm";
-import GuideProfile from "../components/shared/GuideProfile";
-import TitleH3 from "../components/utilities/TitleH3";
-import useLoadDataSecure from "../hooks/useLoadDataSecure";
-import { failed, getStatusBadgeColor } from "../components/utilities/Functions";
-import useAxiosSecure from "../hooks/useAxiosSecure";
+import useLoadData from "../../../hooks/useLoadData";
+import useAuth from "../../../hooks/useAuth";
+import GuideProfileForm from "../../forms/GuideProfileForm";
+import GuideProfile from "../../shared/GuideProfile";
+import TitleH3 from "../../utilities/TitleH3";
+import useLoadDataSecure from "../../../hooks/useLoadDataSecure";
+import { failed, getStatusBadgeColor } from "../../utilities/Functions";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { toast } from "react-hot-toast";
 import Swal from "sweetalert2";
 
