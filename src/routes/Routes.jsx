@@ -11,20 +11,15 @@ import SignUp from "../components/forms/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import ToursOfTypes from "../pages/ToursOfTypes";
 import AllStories from "../pages/AllStories";
-// import GuideDashboard from "../pages/GuideDashboard";
 import Dashboard from "../pages/Dashboard";
 import GuideRoute from "./GuideRoute";
 import AdminDashboard from "../components/dashboard/admin/AdminDashboard";
-// import TouristDashboard from "../pages/TouristDashboard";
 import TouristDashboardProfile from "../components/dashboard/tourist/TouristDashboardProfile";
 import TouristDashboardBookings from "../components/dashboard/tourist/TouristDashboardBookings";
 import TouristDashboardWishlist from "../components/dashboard/tourist/TouristDashboardWishlist";
-// import TouristDashboardAll from "../pages/TouristDashboardAll";
-import GuideDashboardHome from "../components/dashboard/guide/GuideDashboardHome";
 import GuideDashboardProfile from "../components/dashboard/guide/GuideDashboardProfile";
 import GuideDashboardBooking from "../components/dashboard/guide/GuideDashboardBooking";
 import AdminDashboardProfile from "../components/dashboard/admin/AdminDashboardProfile";
-import AdminDashboardHome from "../components/dashboard/admin/AdminDashboardHome";
 import AdminDashboardAddPackage from "../components/dashboard/admin/AdminDashboardAddPackage";
 import ErrorPage from "../pages/ErrorPage";
 
@@ -57,8 +52,8 @@ export const router = createBrowserRouter([
                     { path: "wishlist", element: <TouristDashboardWishlist></TouristDashboardWishlist> },
 
                     // { path: "guide", element: <GuideRoute><GuideDashboardHome></GuideDashboardHome></GuideRoute> },
-                    { path: "guide", element: <GuideDashboardProfile></GuideDashboardProfile> },
-                    { path: "myBookings", element: <GuideDashboardBooking></GuideDashboardBooking> },
+                    { path: "guide", element: <GuideRoute><GuideDashboardProfile></GuideDashboardProfile></GuideRoute> },
+                    { path: "myBookings", element: <GuideRoute><GuideDashboardBooking></GuideDashboardBooking></GuideRoute> },
 
                     { path: "admin", element: <AdminDashboardProfile></AdminDashboardProfile> },
                     { path: "addPackage", element: <AdminDashboardAddPackage></AdminDashboardAddPackage> },

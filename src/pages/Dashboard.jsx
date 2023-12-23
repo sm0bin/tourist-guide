@@ -37,7 +37,7 @@ const Dashboard = () => {
                         {
                             (role === "admin") &&
                             <>
-                                <li><NavLink to='/dashboard/tourist'>My Profile</NavLink></li>
+                                <li><NavLink to='/dashboard/admin'>My Profile</NavLink></li>
                                 <li><NavLink to='/dashboard/addPackage'>Add Package</NavLink></li>
                                 <li><NavLink to='/dashboard/manage'>Manage Users</NavLink></li>
                             </>
