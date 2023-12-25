@@ -66,5 +66,4 @@ const getTourTypeBadgeColor = (tourType) => {
     return badgeColor;
 };
 
-
 export { failed, getStatusBadgeColor, getTourTypeBadgeColor, getRoleBadgeColor };
