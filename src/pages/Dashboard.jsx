@@ -1,6 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-import TouristProfile from "../components/shared/TouristProfile";
 import useRole from "../hooks/useRole";
 import { getRoleBadgeColor } from "../components/utilities/Functions";
 
@@ -18,7 +17,7 @@ const Dashboard = () => {
                     <div className="mx-6 my-24">
                         <Outlet></Outlet>
                     </div>
-                    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                    {/* <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}
 
                 </div>
                 <div className="drawer-side">
@@ -27,7 +26,7 @@ const Dashboard = () => {
                         <div className="mx-auto text-center">
                             <div className="avatar">
                                 <div className="w-24 mask mask-squircle">
-                                    <img src={user?.photoURL} />
+                                    <img src={photoURL} />
                                 </div>
                             </div>
                             <div className={`badge mt-2 capitalize block mx-auto badge-lg ${getRoleBadgeColor(role)}`}>{role}</div>
@@ -35,6 +34,7 @@ const Dashboard = () => {
                             <h2 className="text-lg">{email}</h2>
                         </div>
                         <div className="divider"></div>
+
                         {/* Sidebar content here */}
                         {
                             (role === "admin") &&
