@@ -79,7 +79,7 @@ const AdminDashboardAddPackage = () => {
             <div className="card shrink-0 w-full border p-6 bg-base-100">
                 <TitleH3Center title="Add Package"></TitleH3Center>
                 <form onSubmit={handleSubmit} className="card-body p-0 w-full">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Thumbnail</span>
@@ -116,7 +116,7 @@ const AdminDashboardAddPackage = () => {
                             </label>
                             <input type="text" name="accommodation" placeholder="" className="input input-bordered" required />
                         </div>
-                        <div className="form-control col-span-2">
+                        <div className="form-control col-span-1 md:col-span-2">
                             <label className="label">
                                 <span className="label-text">Description</span>
                             </label>

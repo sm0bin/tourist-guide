@@ -6,7 +6,7 @@ import { getRoleBadgeColor } from "../components/utilities/Functions";
 const Dashboard = () => {
     const { user } = useAuth();
     const { displayName, email, photoURL } = user;
-    const [role, isRoleLoading] = useRole();
+    const [role] = useRole();
 
     return (
         <>
@@ -17,7 +17,7 @@ const Dashboard = () => {
                     <div className="mx-6 my-24">
                         <Outlet></Outlet>
                     </div>
-                    {/* <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}
+                    <label htmlFor="my-drawer-2" className="fixed left-2 top-1/2 z-100 btn btn-circle drawer-button lg:hidden">❯</label>
 
                 </div>
                 <div className="drawer-side">

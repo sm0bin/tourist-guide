@@ -13,7 +13,6 @@ import ToursOfTypes from "../pages/ToursOfTypes";
 import AllStories from "../pages/AllStories";
 import Dashboard from "../pages/Dashboard";
 import GuideRoute from "./GuideRoute";
-import AdminDashboard from "../components/dashboard/admin/AdminDashboard";
 import TouristDashboardProfile from "../components/dashboard/tourist/TouristDashboardProfile";
 import TouristDashboardBookings from "../components/dashboard/tourist/TouristDashboardBookings";
 import TouristDashboardWishlist from "../components/dashboard/tourist/TouristDashboardWishlist";
@@ -22,6 +21,7 @@ import GuideDashboardBooking from "../components/dashboard/guide/GuideDashboardB
 import AdminDashboardProfile from "../components/dashboard/admin/AdminDashboardProfile";
 import AdminDashboardAddPackage from "../components/dashboard/admin/AdminDashboardAddPackage";
 import ErrorPage from "../pages/ErrorPage";
+import AdminDashboardManageUser from "../components/dashboard/admin/AdminDashboardManageUser";
 
 
 export const router = createBrowserRouter([
@@ -57,7 +57,7 @@ export const router = createBrowserRouter([
 
                     { path: "admin", element: <AdminDashboardProfile></AdminDashboardProfile> },
                     { path: "addPackage", element: <AdminDashboardAddPackage></AdminDashboardAddPackage> },
-                    { path: "manage", element: <AdminDashboard></AdminDashboard> }
+                    { path: "manage", element: <AdminDashboardManageUser></AdminDashboardManageUser> }
 
                 ]
             },
