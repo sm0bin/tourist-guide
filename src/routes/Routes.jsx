@@ -22,6 +22,7 @@ import AdminDashboardProfile from "../components/dashboard/admin/AdminDashboardP
 import AdminDashboardAddPackage from "../components/dashboard/admin/AdminDashboardAddPackage";
 import ErrorPage from "../pages/ErrorPage";
 import AdminDashboardManageUser from "../components/dashboard/admin/AdminDashboardManageUser";
+import AdminRoute from "./AdminRoute";
 
 
 export const router = createBrowserRouter([
@@ -55,9 +56,9 @@ export const router = createBrowserRouter([
                     { path: "guide", element: <GuideRoute><GuideDashboardProfile></GuideDashboardProfile></GuideRoute> },
                     { path: "myBookings", element: <GuideRoute><GuideDashboardBooking></GuideDashboardBooking></GuideRoute> },
 
-                    { path: "admin", element: <AdminDashboardProfile></AdminDashboardProfile> },
-                    { path: "addPackage", element: <AdminDashboardAddPackage></AdminDashboardAddPackage> },
-                    { path: "manage", element: <AdminDashboardManageUser></AdminDashboardManageUser> }
+                    { path: "admin", element: <AdminRoute><AdminDashboardProfile></AdminDashboardProfile></AdminRoute> },
+                    { path: "addPackage", element: <AdminRoute><AdminDashboardAddPackage></AdminDashboardAddPackage></AdminRoute> },
+                    { path: "manage", element: <AdminRoute><AdminDashboardManageUser></AdminDashboardManageUser></AdminRoute> }
 
                 ]
             },

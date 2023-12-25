@@ -5,7 +5,7 @@ const TouristProfile = ({ tourist }) => {
     return (
         <div className="card border gap-4 p-6 h-full">
             <figure className="rounded-lg grow">
-                <img className="w-full object-cover" src={photoURL} alt="Profile Image" />
+                <img className="w-full h-full object-cover" src={photoURL} alt="Profile Image" />
             </figure>
             <div className="card-body p-0 shrink">
                 <h2 className=" text-4xl font-script text-blue-400">{displayName}</h2>

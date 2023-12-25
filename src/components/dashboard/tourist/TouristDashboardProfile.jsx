@@ -66,7 +66,7 @@ const TouristDashboardProfile = () => {
                             <label className="label">
                                 <span className="label-text">Your Story</span>
                             </label>
-                            <textarea name="story" rows="13" placeholder="Your Story With Tourist Guide" className="textarea textarea-bordered textarea-sm w-full h-full grow" required></textarea>
+                            <textarea name="story" rows="9" placeholder="Your Story With Tourist Guide" className="textarea textarea-bordered textarea-sm w-full h-full grow" required></textarea>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-info">Share</button>

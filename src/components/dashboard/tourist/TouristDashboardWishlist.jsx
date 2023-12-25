@@ -64,7 +64,7 @@ const TouristDashboardWishlist = () => {
                                         <td><div className={`badge ${getTourTypeBadgeColor(item?.tourType)}`}>{item?.tourType}</div></td>
                                         {/* <td>{item?.tourType}</td> */}
                                         <td className="text-right">${item?.price}</td>
-                                        <td className="space-x-4">
+                                        <td className="space-x-4 flex">
                                             <Link to={`/tours/${item?._id}`} className="btn btn-info">Visit Details</Link>
                                             <button onClick={() => handleDeleteFromWishlist(item?._id)} className="btn btn-error">Delete</button>
                                         </td>

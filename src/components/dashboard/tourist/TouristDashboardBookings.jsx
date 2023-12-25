@@ -113,8 +113,8 @@ const TouristDashboardBookings = () => {
                                         <td>{booking?.guideName}</td>
                                         <td>{booking?.date}</td>
                                         <td className="text-right">${booking?.price}</td>
-                                        <td><div className={`badge ${getStatusBadgeColor(booking?.status)}`}>{booking?.status}</div></td>
-                                        <td className="space-x-4">
+                                        <td><div className={`badge w-max ${getStatusBadgeColor(booking?.status)}`}>{booking?.status}</div></td>
+                                        <td className="space-x-4 flex">
                                             <button onClick={handlePay} className="btn btn-info" disabled={!(booking?.status === "Accepted")}>Pay</button>
                                             <button onClick={() => handleBookingCancel(booking?._id)} className="btn btn-error" disabled={!(booking?.status === "In Review")}>Cancel</button>
                                             <button onClick={() => handleApplyCoupon(booking?._id, booking?.price)} className="btn btn-success" disabled={!(coupon === "applicable" && booking?.status === "Accepted")}>Apply</button>
