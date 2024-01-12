@@ -25,7 +25,7 @@ const TourCard = ({ tour }) => {
 
 
     return (
-        <div className="card bg-base-100 shadow hover:shadow-lg">
+        <div className="card bg-base-100 border shadow hover:shadow-lg">
             <figure><img src={thumbnail} alt={tripTitle} /></figure>
             <div className="card-body">
                 <h2 className="card-title">{tripTitle}</h2>
@@ -33,7 +33,7 @@ const TourCard = ({ tour }) => {
                     <p>Price: ${price}</p>
                     <Link to={`/tours/types/${tourType}`} className={`badge ${getTourTypeBadgeColor(tourType)}`}>{tourType}</Link>
                 </div>
-                <p className="text-gray-500 mt-4 mb-6 text-justify">{description}</p>
+                <p className="mt-4 mb-6 text-justify">{description}</p>
                 <div className='flex gap-4'>
                     <button onClick={handleAddToWishlist} className="btn btn-outline btn-error text-lg"><FaRegHeart /></button>
                     <Link to={`/tours/${_id}`} className="btn btn-info flex-grow">View Package</Link>

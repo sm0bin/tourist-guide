@@ -11,7 +11,7 @@ const Tours = () => {
     </div>
 
     return (
-        <div className="mx-4 md:mx-8 lg:mx-auto max-w-7xl my-32">
+        <div className="mx-4 md:mx-8 lg:mx-auto max-w-7xl py-32">
             <Helmet>
                 <title>Tourist Guide | Tour Packages</title>
             </Helmet>
